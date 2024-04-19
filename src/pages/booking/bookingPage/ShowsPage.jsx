@@ -9,6 +9,7 @@ import {Form} from 'antd'
 import BookingModal1 from "./BookingModal1";
 import BookingModal2 from "./BookingModal2";
 import BookingModal3 from "./BookingModal3";
+import { getFunctions } from "../../../services/movie/movies";
 
 const UI = {
   ShowPage :"ShowPage",
@@ -20,6 +21,7 @@ export default function ShowsPage() {
   const [showSearch, setShowSearch] = useState({});
   const [shows, setShows] = useState(null);
   const [events, setEvents] = useState(null);
+  const [movies, setMovies] = useState(null);
   const [isModalOpen1, setIsModalOpen1] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
   const [isModalOpen3, setIsModalOpen3] = useState(false);
@@ -70,8 +72,9 @@ export default function ShowsPage() {
     setIsModalOpen2(true);
   };
   useEffect(() => {
-    Promise.all([getFunction(), getShowFunction()]).then((data) => {
+    Promise.all([getFunction(), getShowFunction(), getFunctions()]).then((data) => {
       setEvents(data[0]);
+      setMovies(data[2])
       if (id) {
         let show = data[1]?.filter((show) => {
           return show.showId === parseInt(id);
@@ -88,6 +91,7 @@ export default function ShowsPage() {
          <ShowsList
          showSearch={showSearch}
          events={events}
+         movies={movies}
          shows={shows}
          showModal={showModal1}
          payload={payload}
@@ -126,6 +130,7 @@ export default function ShowsPage() {
           <ShowsList
             showSearch={showSearch}
             events={events}
+            movies={movies}
             shows={shows}
             showModal={showModal1}
             payload={payload}

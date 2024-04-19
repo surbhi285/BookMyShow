@@ -20,7 +20,7 @@ export const RenderRoutes = () => {
                 } else return false
             })}
             
-            <Route path="*" element={<Navigate to="/LoginInButton" replace state={{ from: location }} />} />
+            {/* <Route path="*" element={<Navigate to="/LoginInButton" replace state={{ from: location }} />} /> */}
          
         </Routes>
           

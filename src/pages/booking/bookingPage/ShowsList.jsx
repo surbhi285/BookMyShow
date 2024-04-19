@@ -19,12 +19,12 @@ const filterShows = (shows, showSearch) => {
           showSearch.location.every((location) =>
             show.venue.includes(location)
           )))
-    ) 
+    )
       return true;
     return false;
   });
 };
-const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormData}) => {
+const ShowsList = ({ showSearch, shows, movies, events, showModal, payload, initFormData }) => {
   const [filteredShow, setFilteredShow] = useState(null);
 
 
@@ -33,6 +33,13 @@ const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormDat
       let filteredEvents = filterShows(shows, showSearch);
       // console.log("filtered", filteredEvents);
       setFilteredShow(filteredEvents);
+    }
+  }, [shows, showSearch]);
+  useEffect(() => {
+    if (showSearch && shows) {
+      let filteredMovies = filterShows(shows, showSearch);
+      // console.log("filtered", filteredEvents);
+      setFilteredShow(filteredMovies);
     }
   }, [shows, showSearch]);
 
@@ -44,11 +51,12 @@ const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormDat
             key={show.showId}
             show={show}
             events={events}
+            movies={movies}
             index={show.showId}
             showModal={showModal}
             payload={payload}
             initFormData={initFormData}
-           
+
           />
         ))
       ) : (
@@ -58,15 +66,20 @@ const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormDat
   );
 };
 
-const Show = ({ show, events, showModal, payload, initFormData }) => {
+const Show = ({ show, events, movies, showModal, payload, initFormData }) => {
   const { id } = useParams();
-  
+
   const findEvent = (categoryId) => {
     return events.find((event) => event.eventId === categoryId);
   };
   const event = findEvent(show.categoryId);
 
-  const initCreateUpdate=()=>{
+  const findMovie = (categoryId) => {
+    return movies.find((movie) => movie.movieId === categoryId);
+  };
+  const movie = findMovie(show.categoryId);
+
+  const initCreateUpdate = () => {
     payload.current.operation = "ADD";
     payload.current.data = {};
     initFormData();
@@ -76,6 +89,8 @@ const Show = ({ show, events, showModal, payload, initFormData }) => {
 
   return (
     <>
+    {event && (
+      <>
       {id && (
         <>
           <Typography.Title style={{ marginLeft: "50px", marginTop: "50px" }}>
@@ -129,13 +144,13 @@ const Show = ({ show, events, showModal, payload, initFormData }) => {
           {event.eventName}
         </Typography.Title>
         <Button
-          style={{ marginTop: "30px", color: "#4ABD5D", height: "40px", marginRight:"25%" }}
+          style={{ marginTop: "30px", color: "#4ABD5D", height: "40px", marginRight: "25%" }}
         >
           {show.timing}
         </Button>
         <Button
-          onClick={()=>{initCreateUpdate(); showModal()}}
-          style={{ marginTop: "30px", color: "white", height: "40px", backgroundColor:"rgb(220, 53, 75)" }}
+          onClick={() => { initCreateUpdate(); showModal() }}
+          style={{ marginTop: "30px", color: "white", height: "40px", backgroundColor: "rgb(220, 53, 75)" }}
         >
           BOOK
         </Button>
@@ -157,7 +172,9 @@ const Show = ({ show, events, showModal, payload, initFormData }) => {
         />
         Non-Cancellable
       </Typography>
-    </>
+    </> 
+  )}
+   </>
   );
 };
 export default ShowsList;

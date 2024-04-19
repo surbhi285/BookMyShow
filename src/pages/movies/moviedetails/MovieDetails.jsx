@@ -2,24 +2,19 @@ import { Button, Card, Watermark, Row, Col } from "antd";
 import Meta from "antd/es/card/Meta";
 import React from "react";
 import { Typography } from 'antd';
-import { useNavigate} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 const { Text } = Typography;
 
 
 const Movies = ({ movie,onSelectArtist }) => {
     // const nav=useNavigate()
-    
     const handleClick=(artistId)=>{
-        // console.log(artistId,"anushkha dii")
         onSelectArtist(artistId)
     }
     let artistList=[]
-    //  console.log(movie, "help");
-   
         for(const artist of movie.artist){
             artistList.push(artist)
 }
-// console.log(artistList,"shalu")
     return (
         <>
             <Card
@@ -70,6 +65,9 @@ const Movies = ({ movie,onSelectArtist }) => {
                                 <br></br>
                                 {movie.genres + " "}
                             </h3>
+                            <Link to={`booking/movies/${movie.movieId}`}>
+                  
+                
                             <Button
                                 style={{
                                     size: "large",
@@ -83,7 +81,7 @@ const Movies = ({ movie,onSelectArtist }) => {
                             >
                                 BookTicket
                             </Button>
-                            
+                            </Link>
                             <Button
                                 style={{
                                     size: "large",

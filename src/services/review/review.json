@@ -1,0 +1,101 @@
+[{
+    "reviewId" : 1,
+    "rating" : 5,
+    "review" : "Beautiful lines! Always worth it to watch",
+    "category": "event",
+    "categoryId" : 1,
+    "userId": 1
+
+},
+{
+    "reviewId" : 2,
+    "rating" : 4,
+    "review" : "wooooOoooow!! Got goosebumps",
+    "category": "event",
+    "categoryId" : 1,
+    "userId": 2
+
+},
+{
+    "reviewId" : 2,
+    "rating" : 4,
+    "review" : "The funniest show",
+    "category": "event",
+    "categoryId" : 2,
+    "userId": 1
+},
+{
+    "reviewId" : 3,
+    "rating" : 4,
+    "review" : "The funniest show",
+    "category": "event",
+    "categoryId" : 3,
+    "userId": 1  
+},
+{
+    "reviewId" : 4,
+    "rating" : 5,
+    "review" : "Best Musical night",
+    "category": "event",
+    "categoryId" : 4,
+    "userId": 1  
+},
+{
+    "reviewId" : 5,
+    "rating" : 5,
+    "review" : "Best Musical night",
+    "category": "event",
+    "categoryId" : 5,
+    "userId": 1   
+},
+{
+        "reviewId" : 6,
+        "rating" : 5,
+        "review" : "Funniest show",
+        "category": "event",
+        "categoryId" : 6,
+        "userId": 1   
+    
+}, 
+{
+    "reviewId" : 7,
+    "rating" : 5,
+    "review" : "Best Musical night",
+    "category": "event",
+    "categoryId" : 7,
+    "userId": 1   
+},
+{
+    "reviewId" : 8,
+    "rating" : 5,
+    "review" : "Best funniest night",
+    "category": "event",
+    "categoryId" : 8,
+    "userId": 1   
+},{
+    "reviewId" : 9,
+    "rating" : 5,
+    "review" : "Best Musical night",
+    "category": "event",
+    "categoryId" : 9,
+    "userId": 1   
+}, 
+{
+    "reviewId" : 10,
+    "rating" : 5,
+    "review" : "Best technical talk",
+    "category": "event",
+    "categoryId" : 10,
+    "userId": 1   
+}, 
+{
+    "reviewId" : 11,
+    "rating" : 5,
+    "review" : "creative day",
+    "category": "event",
+    "categoryId" : 11,
+    "userId": 1   
+}
+
+
+]

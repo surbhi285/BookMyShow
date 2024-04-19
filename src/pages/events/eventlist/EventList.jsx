@@ -1,0 +1,166 @@
+import { useEffect, useState } from "react";
+import { getFunction } from "../../../services/events/events";
+import { Card, Row, Col, Typography, Modal, Button, Flex } from "antd";
+import {
+  EditOutlined,
+  DeleteOutlined,
+  ExclamationCircleFilled,
+  PlusOutlined,
+} from "@ant-design/icons";
+
+const filterEvents = (events, searchObj) => {
+  return events.filter((event) => {
+    if (
+      !searchObj ||
+      ((!searchObj.genre || event.genres.includes(searchObj.genre)) &&
+        (!searchObj.language || event.language.includes(searchObj.language)) &&
+        (!searchObj.location || event.venue.includes(searchObj.location)))
+    )
+      return true;
+    return false;
+  });
+};
+
+const EventList = ({
+  searchObj,
+  next,
+  setEvent,
+  payload,
+  initFormData,
+  updatedCount,
+  showModal,
+}) => {
+  const [eventsList, setEventsList] = useState([]);
+  const [filteredEvents, setFilteredEvents] = useState(null);
+
+  const showDeleteConfirm = () => {
+    Modal.confirm({
+      title: "Are you sure delete this task?",
+      icon: <ExclamationCircleFilled />,
+      okText: "Yes",
+      cancelText: "No",
+      onOk() {
+        console.log("OK");
+      },
+      onCancel() {
+        console.log("Cancel");
+      },
+    });
+  };
+
+  useEffect(() => {
+    getFunction().then((events) => {
+      setEventsList(events);
+    });
+  }, [updatedCount]);
+
+  useEffect(() => {
+    if (searchObj && eventsList) {
+      let filteredEvents = filterEvents(eventsList, searchObj);
+      setFilteredEvents(filteredEvents);
+    }
+  }, [eventsList, searchObj]);
+
+  const initCreateUpdate = (id) => {
+    if (id === undefined) {
+      payload.current.operation = "ADD";
+      payload.current.data = {};
+      setEventsList([...eventsList, payload.current.data]);
+    } else {
+      payload.current.operation = "UPDATE";
+      payload.current.data={
+        eventId: id,
+      }
+    const eventObj = eventsList?.find((event) => event.eventId === payload.current.data.eventId);
+    payload.current.data = eventObj;
+    console.log(payload.current.data);
+    initFormData();
+    console.log(eventObj);
+  };
+}
+
+  return (
+    <>
+      <Button
+        className="addButton"
+        style={{
+          marginBottom: "20px",
+          marginLeft: "80%",
+          width: "15%",
+          marginTop: 0,
+        }}
+        onClick={() => {
+          initCreateUpdate();
+          showModal();
+        }}
+      >
+        <PlusOutlined />
+        ADD EVENT
+      </Button>
+      <Row justify="space-between">
+        {filteredEvents && filteredEvents.length > 0 ? (
+          filteredEvents.map((event) => (
+            <Col key={event.eventId} span={7}>
+              <Event
+                key={event.eventId}
+                event={event}
+                index={event.eventId}
+                next={next}
+                setEvent={setEvent}
+                showDeleteConfirm={showDeleteConfirm}
+                initCreateUpdate={initCreateUpdate}
+                showModal={showModal}
+              />
+            </Col>
+          ))
+        ) : (
+          <Typography.Title style={{ color: "rgb(220, 53, 75)" }}>
+            Sorry ! No event found
+          </Typography.Title>
+        )}
+      </Row>
+    </>
+  );
+};
+
+const Event = ({
+  event,
+  next,
+  setEvent,
+  showDeleteConfirm,
+  initCreateUpdate,
+  showModal,
+}) => {
+  const handleClick = () => {
+    setEvent(event);
+    next();
+  };
+
+  return (
+    <>
+      <Card
+        key={event.eventId}
+        onClick={handleClick}
+        hoverable
+        style={{ width: 240 }}
+        cover={<img alt={event.eventName} src={event.eventPoster} />}
+      >
+        <Card.Meta title={event.eventName} description={event.venue} />
+      </Card>
+      <Card style={{ margin: 0, width: 240, height: 50, marginBottom: 50 }}>
+        <Flex style={{ justifyContent: "space-between" }}>
+          <EditOutlined
+            key="edit"
+            onClick={() => {
+              initCreateUpdate(event.eventId);
+              showModal();
+            }}
+          />
+          <DeleteOutlined key="delete" onClick={showDeleteConfirm} />
+        </Flex>
+      </Card>
+    </>
+  );
+};
+
+export default EventList;

@@ -1,0 +1,110 @@
+[
+{
+    "showId" :1,
+    "category": "event",
+    "categoryId": 1,
+    "date" :["28 April 2024", "29 April 2024","30 April 2024"],
+    "timing":["04:00 PM"],
+    "language" : ["Hindi","English", "Urdu"],
+    "venue" : "Gaur City Mall: Noida",
+    "price" : 499
+},
+{
+    "showId" :2,
+    "category": "event",
+    "categoryId": 2,
+    "date" :["23 April 2024"],
+    "timing":["08:00 PM"],
+    "language" : ["Hindi"],
+    "venue" : "TalKatora Stadium: Delhi",
+    "price" : 599  
+},
+{
+    "showId" :3,
+    "category": "event",
+    "categoryId": 3,
+    "date" :["12 April 2024"],
+    "timing":["07:00 PM"],
+    "language" : ["Hindi", "English"],
+    "venue" : "The Gully Cafe: Gurugram",
+    "price" : 999
+}, 
+{
+    "showId" :4,
+    "category": "event",
+    "categoryId": 4,
+    "date" :["20 April 2024"],
+    "timing":["02:00 PM"],
+    "language" : ["English"],
+    "venue" : "Bailey's Diner: Gurugram",
+    "price" : 750
+},
+{
+    "showId" :5,
+    "category": "event",
+    "categoryId": 5,
+    "date" :["10 April 2024","11 April 2024", "12 April 2024"],
+    "timing":["05:00 PM"],
+    "language" : ["English","Hindi","Punjabi"],
+    "venue" : "SohoClub: Delhi",
+    "price" : 1099  
+},
+{
+    "showId" :6,
+    "category": "event",
+    "categoryId": 6,
+    "date" :["10 April 2024"],
+    "timing":["06:00 PM"],
+    "language" : ["English","Hindi","Punjabi"],
+    "venue" : "Punjabi Bagh Club: Delhi",
+    "price" : 999
+},
+{
+    "showId" :7,
+    "category": "event",
+    "categoryId": 7,
+    "date" :["25 April 2024", "26 April 2024", "27 April 2024"],
+    "timing":["07:00 PM"],
+    "language" : ["Hindi"],
+    "venue" : "Mall of Faridabad",
+    "price" : 899  
+},
+{
+    "showId" :8,
+    "category": "event",
+    "categoryId": 8,
+    "date" :["18 April 2024", "19 April 2024","20 April 2024"],
+    "timing":["05:00 PM"],
+    "language" : ["Hindi", "English"],
+    "venue" : "MicDrop 2.0: Delhi",
+    "price" : 499
+}, 
+{
+    "showId" :9,
+    "category": "event",
+    "categoryId": 9,
+    "date" :["20 April 2024","21 April 2024","22 April 2024"],
+    "timing":["05:00 PM"],
+    "language" : ["Hindi"],
+    "venue" : "kamani Auditorium: Delhi",
+    "price" : 599
+},
+{
+    "showId" :10,
+    "category": "event",
+    "categoryId": 10,
+    "date" :["20 April 2024"],
+    "timing":["10:00 AM"],
+    "language" : ["English","Hindi"],
+    "venue" : "Sirifort Auditorium: Delhi",
+    "price" : 1099  
+},{
+    "showId" :11,
+    "category": "event",
+    "categoryId": 11,
+    "date" :["21 April 2024"],
+    "timing":["11:00 AM"],
+    "language" : ["English","Hindi"],
+    "venue" : "Dogra Hall: Delhi",
+    "price" : 300  
+}]

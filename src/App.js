@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+// import Movies from './pages/movies/movielist/MovieListPage';
+
+import WrapperMovies from './pages/movies/WrapperMovies';
+
+import { AuthWrapper } from './structure/AuthWrapper';
+import { BrowserRouter } from 'react-router-dom';
+import HeaderFooter from './pages/homepage/HeaderFooter';
+import FooterFile from './pages/homepage/FooterFile';
+import ContentFile from './pages/homepage/ContentFile';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+
+      <BrowserRouter>
+
+        <HeaderFooter />
+
+           <AuthWrapper />
+
+        <FooterFile />
+      </BrowserRouter>
+
+
+    </>
   );
 }
 

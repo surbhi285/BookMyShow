@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.inactive-button {
+  background-color: green; 
+  color:yellow;
+}
+.active-button {
+  background-color: blueviolet; 
+  color:grey;
+}
+.yellow-button {
+  background-color: red; /* Yellow color */
+  color: black;
+}
+
+.green-button {
+  background-color: white; /* Green color */
+  color:red;
+}

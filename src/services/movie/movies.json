@@ -1,0 +1,313 @@
+
+[
+    { 
+    "movieId":1, 
+    "movieName":"Shaitan", 
+    "moviePoster":"/assets/movie-images/Shaitan.jpg", 
+    "languages":["Hindi","Tamil"], 
+    "duration": "2hr 22min", 
+    "genres": ["Supernatural", "Thriller"], 
+    "releaseDate":"8 Mar,2024", 
+    "movieDetail":"Kabir and his family`s fun weekend retreat takes a nightmarish turn when they let a friendly but mysterious stranger into their house. As the clock ticks, the family will be forced to confront their worst fears in this gripping, edge-of-the-seat supernatural-thriller that deals with the sinister elements of Indian Black Magic.", 
+    "censorBoardRating":" U/A",
+    "artist":[{
+        "artistId": 15,
+        "name": "Ajay Devgn",
+        "image": "/assets/artist-images/ajay.jpg",
+        "role": [
+            "Actor",
+            "Film Director",
+            "Film Producer"
+        ],
+        "born": "April 2, 1969",
+        "birthplace": "New Delhi, Delhi, India",
+        "about": "Born as Vishal Veeru Devgan, Ajay Devgn is an Indian actor, director, producer who mainly works in Bollywood films. He is one of the most popular actors of India and has delivered several super hit films, after making a promising debut with the movie Phool Aur Kaante in 1991. Ajay was honored with the Padma Shri by the Government of India in the year 2016.",
+        "knownAs": "Vishal Veeru Devgan "
+    }, {
+        "artistId": 18,
+        "name": "R. Madhavan",
+        "image": "/assets/artist-images/R.Madhavan.jpg",
+        "role": [
+            "Actor",
+            "Film Producer",
+            "Film Director"
+        ],
+        "born": "June 1, 1970",
+        "birthplace": "Jamshedpur, Jharkhand, India",
+        "about": "Best remembered for his portrayal of Maddy from the 2001 romantic drama Rehnaa Hai Terre Dil Mein, Madhavan Balaji Ranganathan, is an Indian actor, producer, and television host. The big movie star, in fact, started his acting career with television and was seen in small roles, one of which was Zee TV`s soap opera Banegi Apni Baat in 1996. A few television appearances and ads later, his big break came with Mani Ratnam`s Alaipayuthey in 2000, which won him immense praise and recognition as a romantic hero. Having been a part of successful films such as Minnale, Kannathil Muthamittal, Rang De Basanti, 3 Idiots, and Tanu Weds Manu Returns, the actor has received various nominations and won several Filmfare Awards for his performances.Madhavan also co-owns the production house Leuko Films with his wife Sarita Birje. Leuko Films has produced the 2007 drama thriller Evano Oruvan, the 2016 bilingual drama Irudhi Suttru in Tamil and Saala Khadoos in Hindi.",
+        "knownAs": "Maddy, Madhavan Ranganathan "
+    },{
+        "artistId": 23,
+        "name": "Janki Bodiwala",
+        "image": "/assets/artist-images/JankiBodiwala.jpg",
+        "role": [
+            "Actress"
+        ],
+        "born": "October 30,1995",
+        "birthplace": "Ahmedabad, Gujarat, India",
+        "about": "A Gujarati movie actress, Janki Bodiwala is associated with the movie Chhello Divas (2015). Her 2017 release includes the Gujarati film O Taareee. Directed by Tapan Vyas, the movie along with Janki stars Jayesh More, Pratik Rathod, Revanta Sarabhai, and Riddhi Jain in important roles. Her 2018 release includes Chhutti Jashe Chhakka. In 2019, Janki acted in Bau Na Vichaar, directed by Hrutul.",
+        "knownAs": " "
+    }, {
+        "artistId": 22,
+        "name": "Jyotika Sadanah",
+        "image": "/assets/artist-images/JyotikaSadanah.jpg",
+        "role": [
+            "Actress",
+            "Film Producer"
+        ],
+        "born": "October 18, 1978",
+        "birthplace": "Mumbai, Maharashtra, India",
+        "about": "Jyotika is an Indian film actress who predominantly appears in Tamil films. She has also acted in Kannada, Malayalam, Telugu and Hindi language films. She is best known for her performances in Dumm Dumm Dumm (2001), Kaakha Kaakha (2003), Chandramukhi (2005), Sillunu Oru Kaadhal (2006), Vettaiyaadu Vilaiyaadu (2006), and Mozhi (2007). She is also a recipient of the Kalaimamani Award. She is cited by actors like Rajinikanth, Kamal Haasan and Vijay as the best actress in the world. Jyotika married co-actor Suriya in September 2006 after being in a relationship for several years. Post this, she was inactive in the industry but made a comeback with the movie 36 Vayadhinile in 2015. Her other projects include the drama film Magalir Mattum (2017) , Naachiyaar (2018) and Chekka Chivantha Vaanam (2018). Her 2019 release includes Jackpot and Donga. Her other notable works include Ponmagal Vandhal (2020), Udanpirappe (2021), Kaathal - The Core (2023), Shaitaan (2024) and Sri (2024).",
+        "knownAs": " "
+    }]
+    },
+    { 
+    "movieId":2, 
+    "movieName":"Kung Fu Panda 4", 
+    "moviePoster":"/assets/movie-images/kungFuu.jpg", 
+    "languages":["Hindi","English","Tamil","Telugu"], 
+    "duration": "1hr 33min", 
+    "genres": ["Animation","Comedy","Adventure"], 
+    "releaseDate":"15 Mar,2024", 
+    "movieDetail":"Po faces his greatest challenge yet when he ventures to the big city and meets a new villain called the Chameleon.", 
+    "censorBoardRating":"U" ,
+    "artist":[ {
+        "artistId": 16,
+        "name": "Jack Black",
+        "image": "/assets/artist-images/jack.jpg",
+        "role": [
+            "Actor"
+        ],
+        "born": "August 28, 1969",
+        "birthplace": "Santa Monica, California, United States Of America",
+        "about": "A versatile artist, Jack Black is an American actor, comedian, singer, writer, producer and musician. Known for mostly portraying comedic roles, Black is a two-time Golden Globe Awards nominee. Having started his professional acting career with the TV series, Our Shining Moment in 1991, over the years, Black, in his illustrious career has starred in more than 30 TV series and 40 feature films.",
+        "knownAs": "JB, Jables, Thomas Jacob Black "
+    },
+    {
+        "artistId": 17,
+        "name": "Awkwafina",
+        "image": "/assets/artist-images/awkwafina.jpeg",
+        "role": [
+            "Actress"
+        ],
+        "born": "June 2, 1989",
+        "birthplace": "New York City, New York, United States",
+        "about": "Nora Lum Ying, known by her stage name Awkwafina, is an American rapper and actress. Born to a Chinese American father and a South Korean mother in New York City, she started rapping at the age of 13 and rose to prominence in 2012 courtesy of the song My Vag from her debut studio album Yellow Ranger. In 2016, Awkwafina made her feature film debut with the comedy Neighbors 2: Sorority Rising. She has since appeared in supporting roles in a number of movies, notable among which are the comedy-drama Dude (2018), the heist comedy Oceans 8 (2018), the romantic comedy Crazy Rich Asians (2018) and Jumanji: The Next Level (2019).",
+        "knownAs": "Nora Lum "
+    },{
+        "artistId": 21,
+        "name": "Viola Davis",
+        "image": "/assets/artist-images/ViolaDavis.jpg",
+        "role": [
+            "Actress",
+            "Film Producer"
+        ],
+        "born": "August 11, 1965",
+        "birthplace": "St. Matthews, South Carolina, U.S.A.",
+        "about": "Viola Davis is a popular American film and TV actress and producer who is known to play small and supporting roles. The winner of several prestigious awards including Golden Globe, BAFTA Award and Critics Choice Award, is the first African-American woman in the history of Hollywood cinema to win five SAG Awards. The actress who started her career with The Substance of Fire in 1996 has appeared in several in several popular films like Antwone Fisher (2002), Knight and Day (2010), Prisoners (2013), Suicide Squad (2016), Fences (2016), Widows (2018), Giving Voice (2020) and Ma Rainey`s Black Bottom (2020). Her other notable works include The Suicide Squad (2021), The Unforgivable (2021), Black Adam (2022) and The Hunger Games: The Ballad of Songbirds and Snakes (2022).",
+        "knownAs": " "
+    }
+   ]
+    },
+    { 
+    "movieId":3, 
+    "movieName":"Godzilla x Kong: The New Empire", 
+    "moviePoster": "/assets/movie-images/Godzila.jpg", 
+    "languages":["Hindi","English","Tamil","Telugu"],
+    "duration": "1hr 54min", 
+    "genres": ["Action","Thriller","Sci-Fi"], 
+    "releaseDate":"29 Mar,2024", 
+    "movieDetail":"An all-new adventure that pits the almighty Kong and the fearsome Godzilla against a colossal undiscovered threat hidden within our world, challenging their very existence-and our own.", 
+    "censorBoardRating":" UA",
+    "artist":[{
+        "artistId": 26,
+        "name": "Rebecca Hall",
+        "image": "/assets/artist-images/RebeccaHall.jpg",
+        "role": [
+            "Actor"
+        ],
+        "born": "May 3, 1982",
+        "birthplace": "London, United Kingdom",
+        "about": "Rebecca Hall is a British-American actress. She has acted in dozens of movies, plays, and TV shows, racking up several awards and nominations for her performances.",
+        "knownAs": " "
+    },
+    {
+        "artistId": 27,
+        "name": "Brian Tyree Henry",
+        "image": "/assets/artist-images/BrianTyree.jpg",
+        "role": [
+            "Actor" ," Voice Cast"
+        ],
+        "born": "March 31, 1982",
+        "birthplace": "Fayetteville, North Carolina, U.S.A.",
+        "about": "American actor Brian Tyree Henry started off on stage and acted in several plays, off-broadway, and Broadway, including the critically acclaimed Broadway musical The Book of Mormon and Lobby Hero. The latter earned him a nomination for Tony Award for Best Featured Actor in a Play. He was also a nominee for the Emmy Award for Outstanding Supporting Actor in a Comedy series for portraying the role of Alfred Paper Boi Miles in Atlanta (2016-2018) alongside Donald Glover. He has also appeared on television series like Law and Order (2009), The Good Wife (2010), Vice Principle (2016-2017), How to Get Away with Murder (2017) and This is Us (2017).His film roles include Person to Person (2017), Crown Heights (2017), Irresplaceable You (2018), Spider-Man: Into the Spider-Verse (2018) and Joker (2019), The Eternals (2021), Widows (2021), The Woman In The Window (2021) and Godzilla vs. Kong (2021).",
+        "knownAs": " "
+    },
+    {
+        "artistId": 28,
+        "name": "Dan Stevens",
+        "image": "/assets/artist-images/DanStevens.jpg",
+        "role": [
+            "Actor" 
+        ],
+        "born": "October 10, 1982",
+        "birthplace": "Croydon, England, United Kingdom",
+        "about": "Daniel Jonathan Stevens, popularly known as Dan Stevens, is an English actor, writer and voice artist. He is mainly known for his role in the critically acclaimed period drama television series Downton Abbey and films like The Guest (2014), A Walk Among the Tombstones (2014), The Ticket (2016) and Beauty and the Beast (2017). Stevens is also the co-founder and editor of an online literary quarterly called The Junket, and has served as a member of the judging panel for the Man Booker Prize for Fiction in 2012.",
+        "knownAs": "Daniel Jonathan Stevens, Daniel Jonathan Dan Stevens, Dan "
+    }]
+    },
+    { 
+    "movieId":4, 
+    "movieName":"Article 370", 
+    "moviePoster":"/assets/movie-images/article370.jpg ", 
+    "languages":["Hindi"], 
+    "duration": "2hr 40min", 
+    "genres": ["Drama","Political"], 
+    "releaseDate":"23 Feb,2024", 
+    "movieDetail":"In the aftermath of the 2016 Kashmir unrest, a young local field agent, Zooni Haksar, is picked out by Rajeshwari Swaminathan from the Prime Minister`s Office for a top secret mission. Their aim? Cracking down on terrorism and putting an end to the billion dollar conflict economy in the valley, by doing the absolute impossible - Abrogating the notorious Article 370. That too, without spilling a single drop of innocent blood.", 
+    "censorBoardRating":"UA",
+    "artist":[{
+        "artistId": 29,
+        "name": "Yami Gautam",
+        "image": "/assets/artist-images/Yami.jpg",
+        "role": [
+            "Actor" 
+        ],
+        "born": "November 28, 1988",
+        "birthplace": "Bilaspur, Himachal Pradesh, India",
+        "about": "Born on 28th November 1988, Yami Gautam is an Indian film and TV actress who mainly appears in the Hindi cinema. She has also starred in a couple of Telugu, Tamil, Kannada, and Punjabi movies. Yami was first seen on silver screen in a Kannada film Ullasa Utsaha and made her Bollywood debut with the film Vicky Donor.",
+        "knownAs": " "
+    },
+    {
+        "artistId": 30,
+        "name": "Priyamani",
+        "image": "/assets/artist-images/Priyamani.jpg",
+        "role": [
+            "Actor","Special Appearances" 
+        ],
+        "born": "June 4, 1984",
+        "birthplace": "Palakkad, Kerala, India",
+        "about": "Priyamani is a highly respected Indian actress who started her career in the entertainment business as a model. She is been one of the most talented multilingual artists, who has appeared in films across different languages including Kannada, Hindi, Tamil, Telugu, and Malayalam. The actress who is known for portraying her roles with panache has been part of several critically acclaimed movies like Raam (2009), Raavanan (2012), and Chaarulatha (2012). For her stellar acting performances, the actress has won several awards including a National Award for best Actress and Filmfare awards.",
+        "knownAs": "Priya Vasudev Mani Iyer "
+    },
+    {
+        "artistId": 31,
+        "name": "Vaibhav Tatwawadi",
+        "image": "/assets/artist-images/Vaibhav.jpg",
+        "role": [
+            "Actor" 
+        ],
+        "born": "August 25, 1988",
+        "birthplace": "Nagpur, Maharashtra, India",
+        "about": "Vaibhav Tatwawadi is a Marathi film actor, who made his debut with the film Kurukshetra in 2013. He was a part of television series such as Amar Prem (2013) and Tuza Maza Jamena (2013). Some of his other performances can be seen in Coffee Ani Barach Kahi (2015) and Shortcut (2015). He also played an integral role in the hit film Bajirao Mastani (2015) and in Mr. and Mrs. Sadachari (2016). His 2017 release includes the Marathi romantic drama film, Bhetali Tu Punha. Directed by Chandrakant Kanse, the movie co-stars Pooja Sawant in the lead. His other releases include What`s Up Lagna (2018), Manikarnika: The Queen of Jhansi (2019) and Tribhanga (2021).",
+        "knownAs": " "
+    }]
+    },
+    { 
+    "movieId":5, 
+    "movieName":"Yodha", 
+    "moviePoster":"/assets/movie-images/Yodha.jpg", 
+    "languages":["Hindi"], 
+    "duration": "2hr 13mins", 
+    "genres": ["Action","Thriller"], 
+    "releaseDate":"15 Mar,2024", 
+    "movieDetail":"After failing at an important mission - years later, the system is shocked to find Arun on board in very mysterious circumstances on a hijacked flight. All evidence points towards Arun being on a mission for revenge against the system that snatched everything away from him.", 
+    "censorBoardRating":"12A" ,
+    "artist":[ {
+        "artistId": 1,
+        "name": "Sidharth Malhotra",
+        "image": "/assets/artist-images/SidharthMalhotra.jpeg",
+        "role": [
+            "Actor",
+            "Assistant Director"
+        ],
+        "born": "January 16, 1985",
+        "birthplace": "New Delhi, Delhi, India",
+        "about": "Not being contented with his modeling assignments, Delhi-born Sidharth Malhotra decided to make his career in Bollywood. However, surprisingly, the then-aspiring actor made his debut in the industry as an assistant director to Karan Johar who was working on his film My Name Is Khan.A couple of years later, Karan gave him a break as an actor in the movie Student of the Year (2012), which also featured debutants Alia Bhatt and Varun Dhawan.Sidharth`s performance in his debut movie received unanimous appreciation and since then the actor has established himself to be one of the most successful actors of the new generation. So much so that Saibal Chatterjee of NDTV compared his screen presence to the legendary Amitabh Bachchan. He has appeared in movies such as Hasee Toh Phasee (2014), Ek Villain (2014), and Kapoor & Sons (2016).",
+        "knownAs": "Sid"
+    }]
+    },
+    { 
+    "movieId":6, 
+    "movieName":"Madgaon Express", 
+    "moviePoster":"/assets/movie-images/MadgaonExpress.jpg", 
+    "languages":["Hindi"], 
+    "duration": "2hr 25min", 
+    "genres": ["Drama","Comedy"], 
+    "releaseDate":"22 Mar,2024", 
+    "movieDetail":"Three childhood friends embark on a trip to Goa that goes completely off-track when they wake up in a hotel room and find cocaine that belongs to a don named Mendoza.", 
+    "censorBoardRating":"UA" ,
+    "artist":[{
+        "artistId": 32,
+        "name": "Divyendu Sharma",
+        "image": "/assets/artist-images/divyenndu.jpg",
+        "role": [
+            "Actor" 
+        ],
+        "born": "May 13, 1983",
+        "birthplace": "Delhi, India",
+        "about": "Divyendu Sharma was born and raised in Delhi and is a political science graduate. He was a part of the theatre scene in Delhi for three years and then went on to pursue a 2 year diploma in acting at the prestigious Film and Television Institute of India. He has featured in commercials like Fidelity Mutual Funds, Virgin Mobiles and Birla Sun Life Insurance, to name a few. Divyendu made his film debut with the comedy, Pyaar Ka Punchnama (2011) in which his performance, won mass appreciation and a Screen Award for Most Promising Newcomer. He was then seen in David Dhawan`s Chasme Baddoor (2013). Divyenduwas last seen in Ekkees Toppon Ki Salaami (2014) and will soon be seen in Dilliwaali Zaalim Girlfirend (2015) and El`ayichi (2015). His 2017 release includes Toilet - Ek Prem Katha and 2016 The End. His 2018 release includes Batti Gul Meter Chalu, directed by Shree Narayan Singh.",
+        "knownAs": " "
+    },
+    {
+        "artistId": 33,
+        "name": "Avinash Tiwary",
+        "image": "/assets/artist-images/Avinash.jpg",
+        "role": [
+            "Actor" 
+        ],
+        "born": "August 15, 1985",
+        "birthplace": "Bihar, India",
+        "about": "Best known for his breakout role as Advocate Ajatshatru in the popular Sony TV psychological thriller series Yudh (2014), Avinash Tiwary has appeared in a handful of Bollywood movies since his debut in Suno Na, Ek Nanhi Awaaz (2009). Notable among these is the comedy-drama Tu Hai Mera Sunday (2016), which followed five friends who set out on a search for a new haunt after their beach soccer tradition is cancelled. The film, which opened to much critical acclaim, had the actor essaying a central role alongside Barun Sobti, Shahana Goswami, Nakul Bhalla and Vishal Malhotra.In 2018, Avinash appeared in the romantic drama Laila Majnu, where he was paired opposite Tripti Dimri in one of the titular roles.",
+        "knownAs": " "
+    },
+    {
+        "artistId": 34,
+        "name": "Nora Fatehi",
+        "image": "/assets/artist-images/Nora.jpg",
+        "role": [
+            "Actor" ,"Special Appearances"
+        ],
+        "born": "February 6, 1989",
+        "birthplace": "Canada",
+        "about": "Indo-Canadian dancer, actress and model Nora Fatehi made her acting debut in the 2013 Bollywood film Roar: Tigers of the Sundarbans, and has since been featured in several popular movies, primarily in special appearances and cameos. Notable among these are the Telugu action film Temper (2015), Baahubali: The Beginning (2015), the Bollywood action-thriller Rocky Handsome (2016), Oopiri (2017), My Birthday Song (2018) and Kayamkulam Kochunni (2018). Her other release includes Bharat, Batla House and Street Dancer 3.",
+        "knownAs": " "
+    }]
+    },
+    { 
+    "movieId":7, 
+    "movieName":"Bade Miyan Chote Miyan", 
+    "moviePoster":"/assets/movie-images/BadeMiyan.jpg", 
+    "languages":["Hindi","Tamil","Telugu","kannada"], 
+    "duration": "2hr 25min", 
+    "genres": ["Action","Thriller"], 
+    "releaseDate":"10 April,2024", 
+    "movieDetail":"When a masked enemy rises within the nation, mercilessly targeting the military by stealing the country`s most dangerous weapon, Colonel Azad sends his best officer to unearth two legendary from his unit for the missionBrooding Bade Miyan and cocky Chote Miyan", 
+    "censorBoardRating":"UA" ,
+    "artist":[    {
+        "artistId": 2,
+        "name": "Akshay Kumar",
+        "image": "/assets/artist-images/akshay-kumar.jpg",
+        "role": [
+            "Actor",
+            "Producer"
+        ],
+        "born": "September 9, 1967",
+        "birthplace": "Punjab,India",
+        "about": "Akshay Kumar is an Indian actor, TV host, and producer who is known as the Khiladi of Bollywood because he has been part of over eight movies with the word Khiladi in it. Before entering Bollywood, the actor was an aspiring martial artist and was in Bangkok to study the art form. While there, he pursued cooking for a living. From being a cook in Bangkok to becoming a famous Bollywood star, Akshay Kumar is a role model for those who dream big. He made his mark in the industry on sheer talent and hard work, despite his good looks and pleasant personality. He first came into the limelight with the movie Khiladi and went on to become a top Bollywood actor with Yeh Dillagi.Kumar has also appeared on television and has hosted reality adventure series Fear Factor - Khatron Ke Khiladi, and also launched a dance reality show called Dare 2 Dance. In the year 2008, the actor started his own production company called Hari Om Productions. Under this banner, Akshay Kumar co-produced several movies, in which he appeared too, such as Singh Is Kinng, Action Replayy, and Tees Maar Khan, to name a few. In 2011, Kumar co-founded another film and TV production house, Grazing Goat Pictures, and its first project was OMG - Oh My God!, which he co-starred with actor Paresh Rawal.He is best remembered for his roles in Namastey London, Hera Pheri, Mujhse Shaadi Karogi, Bhool Bhulaiyaa, and Airlift among many others. From drama and action to comedy, Akshay Kumar is one actor who`s done it all.He has been honored with the Rajiv Gandhi Award in 2004 for his great contributions to Bollywood and has also been awarded the Padma Shri in 2009, the fourth highest civilian award in India, for his contribution to Indian cinema. The University of Windsor recognized his contribution to Indian cinema by presenting to him an Honorary Doctorate of Law.",
+        "knownAs": "Khiladi of Bollywood, Akki, Mac, Rajiv Hari Om Bhatia"
+    },
+    {
+        "artistId": 3,
+        "name": "Tiger Shroff",
+        "image": "/assets/artist-images/tiger.jpg",
+        "role": [
+            "Actor"
+        ],
+        "born": "March 2, 1990",
+        "birthplace": "Mumbai, Maharashtra, India",
+        "about": "Having made a mark in the industry with his debut movie, Heropanti,  itself, Tiger Shroff is more than just another star kid. While it is known that he is a fitness freak, the martial arts expert also performs most of his stunts on his own as was seen in his 2016 release, Baaghi. An agile dancer too, Tiger played the role of a street dancer inspired by Michael Jackson in Munna Michael in 2017.Besides acting in Hindi films, the supremely athletic Tiger Shroff has danced his way through few highly popular music album solos like Zindagi Aa Raha Hoon Main, Chal Waha Jaate Hai, and more.",
+        "knownAs": "Jai Hemant Shroff"
+    }]
+    }
+    ] 

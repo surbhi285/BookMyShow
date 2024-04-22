@@ -2,32 +2,30 @@ import { Modal, Input, Form, Select, DatePicker, Button } from "antd";
 import { addReviewFunction } from "../../../services/review/review";
 
 export default function AddReview({
-    isModalOpen,
-    handleOk,
-    handleCancel,
-    payload,
-    form,
-    setUpdatedCount,
-    setReview
-  }) {
-    const submitForm = (values) => {
-      const transformedValue = {
-        ...values,
-        reviewId: +values.reviewId,
-        categoryId: +values.categoryId,
-        userId : +values.userId,
-      }
+  isModalOpen,
+  handleOk,
+  handleCancel,
+  payload,
+  form,
+  setUpdatedCount,
+}) {
+  const submitForm = (values) => {
+    const transformedValue = {
+      ...values,
+      reviewId: +values.reviewId,
+      categoryId: +values.categoryId,
+      userId: +values.userId,
+    };
 
-      payload.current.data = {...payload.current.data, ...transformedValue}
-          if (payload.current.operation === "ADD") {
-            payload.current.data.eventId = Math.random();
-            addReviewFunction(payload.current.data).then((data) => {
-              setReview(data)
-              setUpdatedCount((count) => count + 1);
-              handleCancel();
-            });
-          }
-        }
+    payload.current.data = { ...payload.current.data, ...transformedValue };
+    if (payload.current.operation === "ADD") {
+      payload.current.data.eventId = Math.random();
+      addReviewFunction(payload.current.data).then(() => {
+        setUpdatedCount((count) => count + 1);
+        handleCancel();
+      });
+    }
+  };
 
   return (
     <>
@@ -51,7 +49,9 @@ export default function AddReview({
           <Form.Item
             label="Review Id"
             name="reviewId"
-            rules={[{ required: true, message: "Please input your review Id!" }]}
+            rules={[
+              { required: true, message: "Please input your review Id!" },
+            ]}
           >
             <Input />
           </Form.Item>
@@ -59,9 +59,7 @@ export default function AddReview({
           <Form.Item
             label="Rating"
             name="rating"
-            rules={[
-              { required: true, message: "Please input your Rating!" },
-            ]}
+            rules={[{ required: true, message: "Please input your Rating!" }]}
           >
             <Input />
           </Form.Item>
@@ -69,9 +67,7 @@ export default function AddReview({
           <Form.Item
             name="review"
             label="Review"
-            rules={[
-                { required: true, message: "Please input your Review!" },
-              ]}
+            rules={[{ required: true, message: "Please input your Review!" }]}
           >
             <Input />
           </Form.Item>
@@ -79,9 +75,7 @@ export default function AddReview({
           <Form.Item
             name="category"
             label="Category"
-            rules={[
-                { required: true, message: "Please input your Category!" },
-              ]}
+            rules={[{ required: true, message: "Please input your Category!" }]}
           >
             <Input />
           </Form.Item>
@@ -106,15 +100,13 @@ export default function AddReview({
             <Input />
           </Form.Item>
 
-          
           <Form.Item>
             <Button type="primary" onClick={handleCancel}>
               Cancel
             </Button>
             <Button type="primary" htmlType="submit">
-           Submit
-          </Button>
-
+              Submit
+            </Button>
           </Form.Item>
         </Form>
       </Modal>

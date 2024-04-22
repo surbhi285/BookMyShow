@@ -10,15 +10,13 @@ export default function EventListPage({
   payload,
   initFormData,
   updatedCount,
+  handleDelete,
 }) {
   const [searchObj, setSearchObj] = useState({});
 
   return (
     <Row justify="space-between" gutter={[14, 14]} style={{ margin: 0 }}>
-      <FilterEventList
-        searchObj={searchObj}
-        setSearchObj={setSearchObj}
-      />
+      <FilterEventList searchObj={searchObj} setSearchObj={setSearchObj} />
       <Col span={18}>
         <EventList
           searchObj={searchObj}
@@ -27,7 +25,8 @@ export default function EventListPage({
           payload={payload}
           initFormData={initFormData}
           updatedCount={updatedCount}
-          showModal = {showModal}
+          showModal={showModal}
+          handleDelete={handleDelete}
         />
       </Col>
     </Row>

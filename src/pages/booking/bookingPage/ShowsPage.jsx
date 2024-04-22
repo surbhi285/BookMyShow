@@ -5,16 +5,16 @@ import { getFunction } from "../../../services/events/events";
 import { getShowFunction } from "../../../services/shows/shows";
 // import ShowDetail from "./ShowDetail";
 import { useParams } from "react-router-dom";
-import {Form} from 'antd'
-import BookingModal1 from "./BookingModal1";
-import BookingModal2 from "./BookingModal2";
-import BookingModal3 from "./BookingModal3";
+import {Form, Modal} from 'antd'
+import BookingForm1 from "./BookingForm1";
+import BookingForm2 from "./BookingForm2";
+import BookingForm3 from "./BookingForm3";
 import { getFunctions } from "../../../services/movie/movies";
 
-const UI = {
-  ShowPage :"ShowPage",
-  BookingConfirmed : "BookingConfirmed"
-}
+// const UI = {
+//   BookingModal1:"Form1",
+//   BookingModal2:"Form2",
+// }
 
 export default function ShowsPage() {
   const { id } = useParams();
@@ -26,7 +26,7 @@ export default function ShowsPage() {
   const [isModalOpen2, setIsModalOpen2] = useState(false);
   const [isModalOpen3, setIsModalOpen3] = useState(false);
   const [form] = Form.useForm();
-  // const [ui, setUi] = useState(UI.ShowPage);
+  // const [ui, setUi] = useState(UI.BookingModal1);
 
   let payload = useRef({
     operation: "",
@@ -97,7 +97,8 @@ export default function ShowsPage() {
          payload={payload}
          initFormData={initFormData}
        />
-       <BookingModal1
+
+       <BookingForm1
        isModalOpen={isModalOpen1}
        handleCancel={handleCancel1}
        handleOk={handleOk1}
@@ -105,7 +106,7 @@ export default function ShowsPage() {
        payload={payload}
      />
      
-     <BookingModal2
+     <BookingForm2
        isModalOpen={isModalOpen2}
        handleCancel={handleCancel2}
        handleOk={handleOk2}
@@ -113,7 +114,7 @@ export default function ShowsPage() {
        payload={payload}
      />
    
-     <BookingModal3
+     <BookingForm3
        isModalOpen={isModalOpen3}
        handleCancel={handleCancel3}
        handleOk={handleOk3}
@@ -136,15 +137,16 @@ export default function ShowsPage() {
             payload={payload}
             initFormData={initFormData}
           />
-          <BookingModal1
+          <Modal>
+          <BookingForm1
             isModalOpen={isModalOpen1}
             handleCancel={handleCancel1}
             handleOk={handleOk1}
             form={form}
             payload={payload}
           />
-          
-          <BookingModal2
+          </Modal>
+          <BookingForm2
             isModalOpen={isModalOpen2}
             handleCancel={handleCancel2}
             handleOk={handleOk2}
@@ -152,13 +154,12 @@ export default function ShowsPage() {
             payload={payload}
           />
         
-          <BookingModal3
+          <BookingForm3
             isModalOpen={isModalOpen3}
             handleCancel={handleCancel3}
             handleOk={handleOk3}
             form={form}
             payload={payload}
-            // next = {()=>{setUi(UI.BookingConfirmed)}}
           />
         </>
       )}

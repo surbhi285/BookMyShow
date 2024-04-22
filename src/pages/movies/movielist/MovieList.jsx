@@ -56,9 +56,9 @@ const Movies = ({
         }
     }, [movies, searchObj]);
 
-    const handleMovieClick = (movieId) => {
-        onSelectMovie(movieId); 
-    };
+    // const handleMovieClick = (movieId) => {
+    //     onSelectMovie(movieId); 
+    // };
 
     const initCreateUpdate = (id) => {
         if (id === undefined) {
@@ -98,7 +98,7 @@ const Movies = ({
                 index={movie.movieId} 
                 showDeleteConfirm={showDeleteConfirm}
                 initCreateUpdate={initCreateUpdate}
-                showModal={showModal}   key={movie.movieId} movie={movie}  handleMovieClick={handleMovieClick} style={{
+                showModal={showModal}   key={movie.movieId} movie={movie} style={{
                                                     width: 300,
                                                      height: 400,
                                                     backgroundColor: "white",
@@ -120,14 +120,14 @@ const Movies = ({
 const Movie = ({ movie, index, handleMovieClick,
      showDeleteConfirm, initCreateUpdate, showModal }) => {
     const nav=useNavigate()
-    const handleClick = () => {
-        handleMovieClick(movie.movieId);
-      };
+    // const handleClick = () => {
+    //     handleMovieClick(movie.movieId);
+    //   };
     return (
         <>
         <Card
         key={movie.movieId}
-        onClick={handleClick}
+        // onClick={handleClick}
             hoverable
             style={{ width: 240 ,height:350,marginTop:"50px"}}
             cover={<img style={{ height: 240 }} src={movie.moviePoster} alt="Movie Poster" />}

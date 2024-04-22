@@ -31,7 +31,7 @@ const MovieDetailPage=({back,movieId,onSelectArtist})=>{
      let selectedMovie = null;
 
      if (movieDetails) {
-        selectedMovie = movieDetails.movieDetail.find(movie => movie.movieId == movieId);
+        selectedMovie = movieDetails.movieDetail.find(movie => movie.movieId === movieId);
      }
     
     return(
@@ -54,12 +54,10 @@ const MovieDetailPage=({back,movieId,onSelectArtist})=>{
 //   export default MovieDetailPage
 
 const UI = {
-    ArtistDetailPage: 'ArtistDetailPage', // artist detail
-    MovieDetailPage: 'MovieDetailPage' // movie Detail
+    ArtistDetailPage: 'ArtistDetailPage', 
+    MovieDetailPage: 'MovieDetailPage' 
 };
-const  MovieArtistDetailWrapper=({back,movieId})=>{
-    // const params=useParams()
-    // let movieId=params.movieId
+const  MovieArtistDetailWrapper=({back,movieId})=>{   
     
     const [ui, setUI] = useState(UI.MovieDetailPage);
     const [selectedArtistId, setSelectedArtistId] = useState(null);

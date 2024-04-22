@@ -22,10 +22,9 @@ export default function CreateUpdate({
         handleCancel();
       });
     } else {
-    
       updateFunction(payload.current.data, "movieId").then((data) => {
         console.log(data)
-        onSelectMovie(data.movieId);
+        // onSelectMovie(data.movieId);
         setUpdatedCount((count) => count + 1);
         handleCancel();
        console.log(data);
@@ -82,7 +81,7 @@ export default function CreateUpdate({
                     width: '100%',
                 }} placeholder="'Please provide Movie Poster', " />
             </Form.Item >
-            <Form.Item
+            {/* <Form.Item
                 label="Movie Languages"
                 name="movieLanguages"
                 rules={[
@@ -165,7 +164,7 @@ export default function CreateUpdate({
                 <Input style={{
                     width: '100%',
                 }} placeholder="'Please provide Censor Board Rating', " />
-            </Form.Item >
+            </Form.Item > */}
           
           
           <Form.Item>

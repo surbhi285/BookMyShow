@@ -5,7 +5,7 @@ import { getReviewFunction } from "../../../services/review/review";
 import AddReview from "./AddReview";
 import { Form } from "antd";
 
-export default function EventDetailPage({event, back}) {
+export default function EventDetailPage({ event, back, onSelectArtist }) {
   //    const[eventDetail, setEventDetail] = useState(null);
 
   //  useEffect(()=>{
@@ -14,7 +14,7 @@ export default function EventDetailPage({event, back}) {
   //     })
   //  },[event])
   //  console.log(eventDetail)
-   
+
   const [review, setReview] = useState(null);
   const [updatedCount, setUpdatedCount] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function EventDetailPage({event, back}) {
       setReview(data);
     });
   }, []);
-  
+
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -50,24 +50,23 @@ export default function EventDetailPage({event, back}) {
       form.resetFields();
     }
   };
-  console.log("data",payload.current.data)
 
-  console.log(review);
 
   return (
     <>
-        <AddReview
-          form={form}
-          payload={payload}
-          setUpdatedCount={setUpdatedCount}
-          handleOk={handleOk}
-          handleCancel={handleCancel}
-          isModalOpen={isModalOpen}
-          setReview = {setReview}
-        />
+      <AddReview
+        form={form}
+        payload={payload}
+        setUpdatedCount={setUpdatedCount}
+        handleOk={handleOk}
+        handleCancel={handleCancel}
+        isModalOpen={isModalOpen}
+        setReview={setReview}
+      />
 
       <EventDetail
         eventDetail={event}
+        onSelectArtist={onSelectArtist}
         back={back}
         review={review}
         payload={payload}

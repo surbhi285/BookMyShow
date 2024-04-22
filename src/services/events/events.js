@@ -10,23 +10,16 @@ export function getFunction(){
     })
 }
 
-// export function getDetailFunction(eventId, pk){
-//     return new Promise((resolve)=>{
-//         eventsDetail = crudOperation.getDetail(eventsDetail, eventId, pk);
-//          resolve(eventsDetail)
-//     })
-// }
-
 export function addFunction(newEvent){   
     return new Promise((resolve) =>{
-        eventsDetail = crudOperation.add(eventsDetail, newEvent);
+        eventsDetail = crudOperation.add([...eventsDetail], newEvent);
         resolve(eventsDetail);
     });
 }
 
 export function removeFunction(eventId, pk){
     return new Promise((resolve)=>{
-        eventsDetail = crudOperation.remove(eventsDetail, eventId, pk);
+        eventsDetail = crudOperation.remove([...eventsDetail], eventId, pk);
         resolve(eventsDetail);
     });
 }
@@ -34,7 +27,7 @@ export function removeFunction(eventId, pk){
 export function updateFunction(updatedEvent, pk){
     return new Promise((resolve)=>{
         console.log("updatedEv",updatedEvent)
-        eventsDetail = crudOperation.update(eventsDetail, updatedEvent, pk);
+        eventsDetail = crudOperation.update([...eventsDetail], updatedEvent, pk);
         console.log("event",eventsDetail)
         resolve(eventsDetail);
     });

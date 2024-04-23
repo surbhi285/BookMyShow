@@ -48,6 +48,7 @@ const Movies = ({
     })
   }, [listUpdatedCount]);
 
+<<<<<<< HEAD
   useEffect(() => {
     if (searchObj && movies) {
       let filteredMovies = filterMovies(movies, searchObj);
@@ -55,6 +56,11 @@ const Movies = ({
       setFilteredMovies(filteredMovies);
     }
   }, [movies, searchObj]);
+=======
+    // const handleMovieClick = (movieId) => {
+    //     onSelectMovie(movieId); 
+    // };
+>>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
 
   const handleMovieClick = (movieId) => {
     onSelectMovie(movieId);
@@ -98,6 +104,7 @@ const Movies = ({
                 index={movie.movieId}
                 showDeleteConfirm={showDeleteConfirm}
                 initCreateUpdate={initCreateUpdate}
+<<<<<<< HEAD
                 showModal={showModal} key={movie.movieId} movie={movie} handleMovieClick={handleMovieClick} style={{
                   width: 300,
                   height: 400,
@@ -138,6 +145,56 @@ const Movie = ({ movie, index, handleMovieClick,
       >
         <Meta title={movie.movieName} description={movie.genres?.join(", ")} />
 
+=======
+                showModal={showModal}   key={movie.movieId} movie={movie} style={{
+                                                    width: 300,
+                                                     height: 400,
+                                                    backgroundColor: "white",
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                    flexDirection: "column",
+                            
+                                                }}/>
+                                                   </Space>
+                                                  </Col>
+                    ))}
+                  
+                {/* </Space> */}
+            </Row>
+        </>
+    )
+};
+
+const Movie = ({ movie, index, handleMovieClick,
+     showDeleteConfirm, initCreateUpdate, showModal }) => {
+    const nav=useNavigate()
+    // const handleClick = () => {
+    //     handleMovieClick(movie.movieId);
+    //   };
+    return (
+        <>
+        <Card
+        key={movie.movieId}
+        // onClick={handleClick}
+            hoverable
+            style={{ width: 240 ,height:350,marginTop:"50px"}}
+            cover={<img style={{ height: 240 }} src={movie.moviePoster} alt="Movie Poster" />}
+            // onClick={() => {
+                //handleMovieClick(movie.movieId)
+                // nav(`/movie/${movie.movieId}`)
+            // }
+        // } 
+            
+        >
+            <Meta title={movie.movieName} description={movie.genres?.join(", ")} />
+           
+        </Card>
+        <Card style={{margin:0, width:240, height: 50, marginBottom:50}}>
+      <Flex style={{justifyContent:"space-between"}}>
+      <EditOutlined key="edit" onClick={()=>{initCreateUpdate(movie.movieId); showModal()}}/>
+      <DeleteOutlined key="delete" onClick={showDeleteConfirm} />
+      </Flex>
+>>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
       </Card>
       <Card style={{ margin: 0, width: 240, height: 50, marginBottom: 50 }}>
         <Flex style={{ justifyContent: "space-between" }}>

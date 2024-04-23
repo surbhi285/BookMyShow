@@ -61,6 +61,7 @@ const MovieDetailPage = ({ back, movieId, onSelectArtist }) => {
         //             setMovieDetails(data);
         //           })
 
+<<<<<<< HEAD
     }, [])
     console.log(movieDetails, "pooja")
     let selectedMovie = null;
@@ -69,6 +70,22 @@ const MovieDetailPage = ({ back, movieId, onSelectArtist }) => {
     if (movieDetails) {
         selectedMovie = movieDetails.movieDetail.find(movie => movie.movieId == movieId);
     }
+=======
+     if (movieDetails) {
+        selectedMovie = movieDetails.movieDetail.find(movie => movie.movieId === movieId);
+     }
+    
+    return(
+        <>
+        <Button style={{
+          
+            fontSize: '20px',
+            color:"black",
+             backgroundColor:"red",
+            width:'60px',
+            height:'40px',
+            alignItems:'center'
+>>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
 
     return (
         <>
@@ -104,13 +121,18 @@ const MovieDetailPage = ({ back, movieId, onSelectArtist }) => {
 
 
 const UI = {
-    ArtistDetailPage: 'ArtistDetailPage', // artist detail
-    MovieDetailPage: 'MovieDetailPage' // movie Detail
+    ArtistDetailPage: 'ArtistDetailPage', 
+    MovieDetailPage: 'MovieDetailPage' 
 };
+<<<<<<< HEAD
 const MovieArtistDetailWrapper = ({ back, movieId }) => {
     // const params=useParams()
     // let movieId=params.movieId
 
+=======
+const  MovieArtistDetailWrapper=({back,movieId})=>{   
+    
+>>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
     const [ui, setUI] = useState(UI.MovieDetailPage);
     const [selectedArtistId, setSelectedArtistId] = useState(null);
     const handleSelectArtist = (artistId) => {

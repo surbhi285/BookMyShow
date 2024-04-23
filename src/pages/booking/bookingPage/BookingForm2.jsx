@@ -1,13 +1,12 @@
 import React from 'react'
 import { Modal, Input, Form, Button, DatePicker} from "antd";
 
-export default function BookingModal2({isModalOpen, handleCancel, handleOk, form, payload}) {
+export default function BookingForm2({isModalOpen, handleCancel, handleOk, form, payload}) {
     
     function form2(values){
         payload.current.data = {...payload.current.data, ...values}
         handleOk();
         }
-
 
   return (
     <>
@@ -17,7 +16,7 @@ export default function BookingModal2({isModalOpen, handleCancel, handleOk, form
     onOk={handleOk}
     onCancel={handleCancel}
     footer= {null}
-  >
+  > 
     <Form
       name="basic"
       labelCol={{ span: 8 }}
@@ -93,7 +92,7 @@ export default function BookingModal2({isModalOpen, handleCancel, handleOk, form
       </Button>
     </Form.Item>
     </Form>
-  </Modal>
+   </Modal> 
 </>
   )
 }

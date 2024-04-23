@@ -15,7 +15,7 @@ let CrudOperation={
     },
     update:function (list,obj,pk){
         return list.map((item)=>{
-            if(item[pk]==obj[pk]){
+            if(item[pk]===obj[pk]){
             return obj[pk]
             }
             else{

@@ -1,4 +1,4 @@
-import { Modal, Input, Form, Select, DatePicker, Button } from "antd";
+import { Modal, Input, Form, Button, Select, DatePicker } from "antd";
 import { addFunction, updateFunction } from "../../../services/events/events";
 
 export default function CreateUpdate({
@@ -8,28 +8,39 @@ export default function CreateUpdate({
   payload,
   form,
   setUpdatedCount,
-  setEvent,
 }) {
   const submitForm = (values) => {
-    payload.current.data = { ...payload.current.data, ...values };
-    console.log(payload.current.data, "create")
+    const transformedValue = {
+      ...values,
+      eventId: +values.eventId,
+      artist: [values["artist"]],
+      genres: [values["genres"]],
+      language: [values["language"]],
+    };
+    payload.current.data = { ...payload.current.data, ...transformedValue };
     if (payload.current.operation === "ADD") {
       payload.current.data.eventId = Math.random();
-      addFunction(payload.current.data).then((data) => {
-        setEvent(data);
+      addFunction(payload.current.data).then(() => {
         setUpdatedCount((count) => count + 1);
+<<<<<<< HEAD
         handleCancel();
         
+=======
+        handleOk(); 
+        payload.current.data = {};
+>>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
       });
     } else {
-      updateFunction(payload.current.data, "eventId").then((data) => {
-        console.log(data)
-        setEvent(data);
+      updateFunction(payload.current.data, "eventId").then(() => {
         setUpdatedCount((count) => count + 1);
-        handleCancel();
-       console.log(data);
+        handleOk();
       });
     }
+    payload.current.data = null;
+  };
+
+  const onChange = (date, dateString) => {
+    console.log(date, dateString);
   };
 
   return (
@@ -51,13 +62,13 @@ export default function CreateUpdate({
           form={form}
           autoComplete="off"
         >
-          <Form.Item
+          {/* <Form.Item
             label="Event Id"
             name="eventId"
             rules={[{ required: true, message: "Please input your event Id!" }]}
           >
             <Input />
-          </Form.Item>
+          </Form.Item> */}
 
           <Form.Item
             label="Event Name"
@@ -80,7 +91,7 @@ export default function CreateUpdate({
             <Input />
           </Form.Item>
 
-          {/* <Form.Item label="Language" name="language">
+          <Form.Item label="Language" name="language">
             <Select>
               <Select.Option value="Hindi">Hindi</Select.Option>
               <Select.Option value="English">English</Select.Option>
@@ -132,7 +143,7 @@ export default function CreateUpdate({
           </Form.Item>
 
           <Form.Item label="DatePicker">
-            <DatePicker />
+            <DatePicker multiple maxTagCount="responsive" size="large" onChange={onChange}/>
           </Form.Item>
 
           <Form.Item
@@ -151,15 +162,27 @@ export default function CreateUpdate({
             rules={[{ required: true, message: "Please input your Price!" }]}
           >
             <Input />
-          </Form.Item> */}
+          </Form.Item>
+          <Form.Item
+            name="artist"
+            label="Artist"
+            rules={[{ message: "Please input Artist!" }]}
+          >
+            <Input />
+          </Form.Item>
           <Form.Item>
-            <Button type="primary" onClick={handleCancel}>
+            <Button
+              type="primary"
+              onClick={handleCancel}
+              style={{ marginRight: 20 }}
+            >
               Cancel
             </Button>
             <Button type="primary" htmlType="submit">
-            {payload.current.operation === "ADD" ? "Add Event" : "Update Event"}
-          </Button>
-
+              {payload.current.operation === "ADD"
+                ? "Add Event"
+                : "Update Event"}
+            </Button>
           </Form.Item>
         </Form>
       </Modal>

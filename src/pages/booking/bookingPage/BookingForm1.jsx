@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Input, Form, Button} from "antd";
 
-export default function BookingModal1({isModalOpen, handleCancel, handleOk, form, payload}) {
+export default function BookingForm1({isModalOpen, handleCancel, handleOk, form, payload, next}) {
 
   function form1(values){
   payload.current.data = {...payload.current.data, ...values} 
@@ -73,7 +73,7 @@ export default function BookingModal1({isModalOpen, handleCancel, handleOk, form
         span: 16,
       }}
     >
-      <Button type="primary" htmlType="submit">
+      <Button type="primary" htmlType="submit" onClick={next}>
        Next
       </Button>
     </Form.Item>
@@ -82,3 +82,7 @@ export default function BookingModal1({isModalOpen, handleCancel, handleOk, form
 </>
   )
 }
+
+
+
+

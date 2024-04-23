@@ -22,7 +22,6 @@ export default function CreateUpdate({
         handleCancel();
       });
     } else {
-    
       updateFunction(payload.current.data, "movieId").then((data) => {
         console.log(data)
         // onSelectMovie(data.movieId);
@@ -94,7 +93,7 @@ export default function CreateUpdate({
                     width: '100%',
                 }} placeholder="'Please provide Movie Poster', " />
             </Form.Item >
-            <Form.Item
+            {/* <Form.Item
                 label="Movie Languages"
                 name="movieLanguages"
                 rules={[
@@ -177,7 +176,13 @@ export default function CreateUpdate({
                 <Input style={{
                     width: '100%',
                 }} placeholder="'Please provide Censor Board Rating', " />
+<<<<<<< HEAD
             </Form.Item >     
+=======
+            </Form.Item > */}
+          
+          
+>>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
           <Form.Item>
             <Button type="primary" onClick={handleCancel}>
               Cancel

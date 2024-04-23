@@ -3,7 +3,7 @@ import { Modal, Input, Form, DatePicker, Button} from "antd";
 import { addFunction } from '../../../services/booking/booking';
 import { Link } from 'react-router-dom';
 
-export default function BookingModal3({isModalOpen, handleCancel, handleOk, form, payload, next}) {
+export default function BookingForm3({isModalOpen, handleCancel, handleOk, form, payload, next}) {
     console.log(payload.current.data);
     const submitForm = (values) => {
           payload.current.data = { ...payload.current.data, ...values };

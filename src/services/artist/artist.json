@@ -45,8 +45,7 @@
             "Indian Singer",
             "Song Writer",
             "Actor",
-            "Film Producer",
-            "Television Personality"
+            "Film Producer"
         ],
         "born": "January 6, 1984",
         "birthplace": "Jalandhar, Punjab, India",
@@ -135,7 +134,7 @@
     {
         "artistId": 11,
         "name": "Anubhav Singh Bassi",
-        "image": "/assets/artist-images/Anubhav-Singh-Bassi",
+        "image": "/assets/artist-images/Anubhav-Singh-Bassi.jpg",
         "role": [
             "Actor",
             "YouTuber",
@@ -214,7 +213,7 @@
     {
         "artistId": 17,
         "name": "Awkwafina",
-        "image": "/assets/artist-images/awkwafina.jpg",
+        "image": "/assets/artist-images/awkwafina.jpeg",
         "role": [
             "Actress"
         ],

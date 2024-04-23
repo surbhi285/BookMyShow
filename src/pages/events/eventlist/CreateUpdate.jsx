@@ -19,6 +19,7 @@ export default function CreateUpdate({
         setEvent(data);
         setUpdatedCount((count) => count + 1);
         handleCancel();
+        
       });
     } else {
       updateFunction(payload.current.data, "eventId").then((data) => {

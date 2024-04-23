@@ -8,7 +8,7 @@ import { AuthWrapper } from './structure/AuthWrapper';
 import { BrowserRouter } from 'react-router-dom';
 import HeaderFooter from './pages/homepage/HeaderFooter';
 import FooterFile from './pages/homepage/FooterFile';
-import ContentFile from './pages/homepage/ContentFile';
+import ContentFile, { SearchBar } from './pages/homepage/ContentFile';
 
 function App() {
   return (
@@ -18,7 +18,6 @@ function App() {
       <BrowserRouter>
 
         <HeaderFooter />
-
            <AuthWrapper />
 
         <FooterFile />

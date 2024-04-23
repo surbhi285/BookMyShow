@@ -1,12 +1,17 @@
-import { Button, Card, Watermark, Row, Col } from "antd";
+import { Button, Card, Watermark, Row, Col, Divider, Typography, Flex  } from "antd";
 import Meta from "antd/es/card/Meta";
 import React from "react";
-import { Typography } from 'antd';
+import {
+  ArrowLeftOutlined,
+  EnvironmentFilled,
+  EditOutlined,
+  StarFilled,
+  UserOutlined,
+} from "@ant-design/icons";
 import { Link, useNavigate} from 'react-router-dom';
 const { Text } = Typography;
 
-
-const Movies = ({ movie,onSelectArtist }) => {
+const Movies = ({ movie,onSelectArtist,review, back, payload, initFormData, updateCount, showModal, setReview }) => {
     // const nav=useNavigate()
     const handleClick=(artistId)=>{
         onSelectArtist(artistId)
@@ -15,8 +20,32 @@ const Movies = ({ movie,onSelectArtist }) => {
         for(const artist of movie.artist){
             artistList.push(artist)
 }
+const findReview = () => {
+    if (review) {
+      return review?.filter (
+        (review) => review.categoryId === movie.movieId
+      );
+    }
+    return [];
+  };
+  const movieReviews = findReview();
+  
+  const initCreateUpdate=()=>{
+    payload.current.operation = "ADD";
+    payload.current.data = {};
+    setReview([...review, payload.current.operation])
+    initFormData();
+  }
+  console.log("payload",payload.current.data)
     return (
         <>
+         <Flex style={{ justifyContent: "space-between", marginBottom: "10px" }}>
+        <Button className="backButton" onClick={back}>
+          <ArrowLeftOutlined />
+          Back
+        </Button>
+       
+      </Flex>
             <Card
                 // style={{ backgroundColor: "white" }},
                 
@@ -93,6 +122,7 @@ const Movies = ({ movie,onSelectArtist }) => {
                                     alignItems: "center",
                                     
                                 }}
+                                onClick={()=>{initCreateUpdate(); showModal()}}
                             >
                                 Add Review
                             </Button>
@@ -124,10 +154,43 @@ const Movies = ({ movie,onSelectArtist }) => {
                 ))}
                 </Row>
                 </Card>
-                <Card>
-                    <h1>Reviews  </h1>
-                </Card>
                 
+                {/* <Divider /> */}
+      <Typography.Title style={{ marginLeft: "10%" }}>
+        Top reviews
+      </Typography.Title>
+      <Flex gap="20px" wrap="wrap" style={{ marginLeft: "10%" }}>
+       {movieReviews.map((movieReview)=>(      
+      <Card
+        style={{
+          width: 400,
+          marginLeft: "5%",
+          marginBottom:"5%"
+        }}
+      >
+        <Flex style={{ justifyContent: "space-between", marginBottom: 20 }}>
+          <Typography>
+            <UserOutlined
+              style={{
+                background: "#999",
+                fontSize: "30px",
+                borderRadius: "60%",
+                color: "white",
+                marginRight: "10px",
+              }}
+            />
+            {movieReview?.userId}
+          </Typography>
+          <Typography>
+            <StarFilled style={{ color: "#fdd835", marginRight: 20 }} />
+            {movieReview?.rating}/5
+          </Typography>
+        </Flex>
+        <Typography level={3}>{movieReview?.review}</Typography>
+      </Card>
+      ))}
+      </Flex>
+        
             
         </>
     );

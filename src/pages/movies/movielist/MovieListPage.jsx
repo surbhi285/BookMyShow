@@ -11,13 +11,9 @@ export default function MovieListPage({ onSelectMovie,
     updatedCount}) {
     const [searchObj, setSearchObj] = useState({});
     const [listUpdatedCount, setListUpdatedCount] = useState(null);
-
     const handleSelectMovie = (movieId) => {
-        // console.log(movieId, "harsh")
         onSelectMovie(movieId);
     };
-
-    // console.log("MovieListPage");
     return (
         <>
             <Card style={{ backgroundColor: "white" }} >
@@ -42,45 +38,6 @@ export default function MovieListPage({ onSelectMovie,
     )
 }
 
-
-
-
-
-// import { useState } from "react";
-// import React from "react";
-// import { Card } from 'antd';
-
-// import Filters from "./FilterMovie";
-// import Movies from "./MovieList";
-
-
-
-
-// export default function MovieListPage({ next }) {
-    
-//     const [searchObj, setSearchObj] = useState({});
-//     const [listUpdatedCount, setListUpdatedCount] = useState(null);
-
-//     console.log("MovieListPage");
-//     return (
-//         <>
-//             <Card style={{
-//                 backgroundColor: "white",
-//             }} >
-//                 <Filters searchObj={searchObj} setSearchObj={setSearchObj} />
-//                 <Card style={{
-//                     backgroundColor: "lightPink",
-//                    width:'125%'
-//                 }}
-//                     onClick={next} >
-//                     <Movies searchObj={searchObj} listUpdatedCount={listUpdatedCount}  />
-//                 </Card>
-//             </Card>
-
-//         </>
-//     )
-    
-// }
 
 
 

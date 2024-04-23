@@ -95,7 +95,64 @@
     "category": "event",
     "categoryId" : 11,
     "userId": 1   
+}, 
+{
+    "reviewId" : 12,
+    "rating" : 5,
+    "review" : "Shaitan is a supernatural thriller that develops deep into complexities of human nature and battle between god and evil",
+    "category": "movie",
+    "categoryId" : 12,
+    "userId": 1
+
+},
+{
+    "reviewId" : 13,
+    "rating" : 4,
+    "review" : "best entertaining movie. Must watch",
+    "category": "movie",
+    "categoryId" : 13,
+    "userId": 2
+
+},
+{
+    "reviewId" : 14,
+    "rating" : 4,
+    "review" : "Its just beautiful",
+    "category": "movie",
+    "categoryId" : 14,
+    "userId": 1
+},
+{
+    "reviewId" : 15,
+    "rating" : 4,
+    "review" : "This movie is complete package of emotion, political drama and patriotism",
+    "category": "movie",
+    "categoryId" : 15,
+    "userId": 1  
+},
+{
+    "reviewId" : 16,
+    "rating" : 5,
+    "review" : "Siddharth Malhotra emerges as the new stylish hero in fast paced entertainer",
+    "category": "movie",
+    "categoryId" : 16,
+    "userId": 1  
+},
+{
+    "reviewId" : 17,
+    "rating" : 5,
+    "review" : "Movie is full bang on!!",
+    "category": "movie",
+    "categoryId" : 17,
+    "userId": 1   
+},
+{
+        "reviewId" : 18,
+        "rating" : 5,
+        "review" : "Akshay kumar, Tiger shroff redefine heroism!",
+        "category": "movie",
+        "categoryId" : 18,
+        "userId": 1   
+    
 }
-
-
 ]

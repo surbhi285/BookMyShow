@@ -5,6 +5,7 @@ import ArtistList from '../artists/ArtistList';
 import LogOutButton from '../login/LogOutButton';
 import UserProfile from './UserProfile';
 import LoginInButton from '../login/LoginInButton';
+import EventWrapper from '../events/EventWrapper';
 
 const { Content } = Layout;
 
@@ -27,6 +28,7 @@ const ContentFile = ({ inputText }) => {
 
         {inputText === "movies" && <WrapperMovies />}
         {inputText === "artist" && <ArtistList />}
+        {inputText==="events"&& <EventWrapper/>}
       </div>
     </Content>
   );
@@ -56,13 +58,28 @@ const SearchBar = ({ setInputText }) => {
             placeholder="Search for movies..."
           />
         </div>
-        <div style={{ flex: 0.6, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+        {/* <div style={{ flex: 0.6, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
           <UserProfile />
           {isAuthenticated ? (
             <LogOutButton />
           ) : (
             <LoginInButton />
           )}
+        </div> */}
+        <div style={{
+          flex: 0.6,
+          minWidth: 0,
+          display: 'flex',
+          // backgroundColor: "GhostWhite",
+          justifyContent: 'flex-end',
+          alignItems: 'right',
+          marginRight:"50px"
+
+        }}
+        >
+        <div style={{marginRight:"30px" }}>Gift Cards</div>
+        <div style={{marginRight:"30px" }}>Offers</div>
+        <div style={{marginRight:"30px" }}>Corporates</div>
         </div>
       </div>
 

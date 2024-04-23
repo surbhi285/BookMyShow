@@ -9,6 +9,7 @@ import ParentComponent from "../pages/homepage/ParentComponent"
 import EventWrapper from "../pages/events/EventWrapper"
 import BookingConfirmed from "../pages/booking/bookingConfirmation/BookingConfirmed"
 import ShowsPage from "../pages/booking/bookingPage/ShowsPage"
+import ArtistList from "../pages/artists/ArtistList"
 
 
 
@@ -31,13 +32,11 @@ export const navList = [
     { path:     "/movies",    name: "Movies",  element: <WrapperMovies/>,      isMenu: true,    isPrivate: false  },
     { path:     "/movie/:movieId",    name: "Movie Details",  element: <MovieArtistDetailWrapper/>,      isMenu: false,    isPrivate: false  },
     { path:     "/events",    name: "Events",  element: <EventWrapper/>,      isMenu: true,    isPrivate: false  },
-    { path:     "/artist/:artistId",    name: "Artist",  element: <ArtistDetailPage/>,      isMenu: true,    isPrivate: false  },
-    { path:     "/shows",    name: "Shows",    element: <ShowsPage/>,      isMenu: true,    isPrivate: false  },
-    { path:     "/booking/event",    name: "Shows",    element: <ShowsPage/>,      isMenu: false,    isPrivate: false  },  
+    { path:     "/artist",    name: "Artist",  element: <ArtistList/>,      isMenu: true,    isPrivate: false  },
+    { path:     "/shows",    name: "Shows",    element: <ShowsPage/>,      isMenu: true,    isPrivate: false  },  
     { path:     "/events/booking/event/:id",    name: "Shows",    element: <ShowsPage/>,      isMenu: false,    isPrivate: false  },
     { path:     "/bookingConfirmation",    name: "BookingConfirmation",    element: <BookingConfirmed/>,      isMenu: false,    isPrivate: false  },
-    { path:     "/booking/movies",    name: "Shows",    element: <ShowsPage/>,      isMenu: false,    isPrivate: false  },  
-    { path:     "/booking/movies/:id",    name: "Shows",    element: <ShowsPage/>,      isMenu: false,    isPrivate: false  },
+    { path:     "/movies/booking/movies/:id",    name: "Shows",    element: <ShowsPage/>,      isMenu: false,    isPrivate: false  },
     { path:     "/bookingConfirmation",    name: "BookingConfirmation",    element: <BookingConfirmed/>,      isMenu: false,    isPrivate: false  },
-    
+    { path:     "/artist/:artistId",    name: "Artist",  element: <ArtistDetailPage/>,      isMenu: false,    isPrivate: false  },
 ]

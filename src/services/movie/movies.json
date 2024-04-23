@@ -1,7 +1,7 @@
 
 [
     { 
-    "movieId":1, 
+    "movieId":12, 
     "movieName":"Shaitan", 
     "moviePoster":"/assets/movie-images/Shaitan.jpg", 
     "languages":["Hindi","Tamil"], 
@@ -62,7 +62,7 @@
     }]
     },
     { 
-    "movieId":2, 
+    "movieId":13, 
     "movieName":"Kung Fu Panda 4", 
     "moviePoster":"/assets/movie-images/kungFuu.jpg", 
     "languages":["Hindi","English","Tamil","Telugu"], 
@@ -110,7 +110,7 @@
    ]
     },
     { 
-    "movieId":3, 
+    "movieId":14, 
     "movieName":"Godzilla x Kong: The New Empire", 
     "moviePoster": "/assets/movie-images/Godzila.jpg", 
     "languages":["Hindi","English","Tamil","Telugu"],
@@ -157,7 +157,7 @@
     }]
     },
     { 
-    "movieId":4, 
+    "movieId":15, 
     "movieName":"Article 370", 
     "moviePoster":"/assets/movie-images/article370.jpg ", 
     "languages":["Hindi"], 
@@ -204,7 +204,7 @@
     }]
     },
     { 
-    "movieId":5, 
+    "movieId":16, 
     "movieName":"Yodha", 
     "moviePoster":"/assets/movie-images/Yodha.jpg", 
     "languages":["Hindi"], 
@@ -228,7 +228,7 @@
     }]
     },
     { 
-    "movieId":6, 
+    "movieId":17, 
     "movieName":"Madgaon Express", 
     "moviePoster":"/assets/movie-images/MadgaonExpress.jpg", 
     "languages":["Hindi"], 
@@ -275,7 +275,7 @@
     }]
     },
     { 
-    "movieId":7, 
+    "movieId":18, 
     "movieName":"Bade Miyan Chote Miyan", 
     "moviePoster":"/assets/movie-images/BadeMiyan.jpg", 
     "languages":["Hindi","Tamil","Telugu","kannada"], 

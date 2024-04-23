@@ -124,29 +124,15 @@ const HeaderFooter = () => {
 
 
         {/* </div> */}
-        {/* <div style={{ flex: 0.6, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+        <div style={{ flex: 0.6, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
           <UserProfile />
           {isAuthenticated ? (
             <LogOutButton />
           ) : (
             <LoginButton />
           )}
-        </div> */}
-        <div style={{
-          flex: 0.6,
-          minWidth: 0,
-          display: 'flex',
-          backgroundColor: "GhostWhite",
-          justifyContent: 'flex-end',
-          alignItems: 'right',
-          marginRight:"50px"
-
-        }}
-        >
-        <div style={{marginRight:"30px" }}>Gift Cards</div>
-        <div style={{marginRight:"30px" }}>Offers</div>
-        <div style={{marginRight:"30px" }}>Corporates</div>
         </div>
+        
       </Header>
     </Layout>
   );

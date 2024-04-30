@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { getFunction } from "../../../services/events/events";
-import { Card, Row, Col, Typography, Modal, Button, Flex } from "antd";
+import { Card, Row, Col, Typography, Button, Flex } from "antd";
 import {
   EditOutlined,
   DeleteOutlined,
-  ExclamationCircleFilled,
   PlusOutlined,
 } from "@ant-design/icons";
 
@@ -29,24 +28,12 @@ const EventList = ({
   initFormData,
   updatedCount,
   showModal,
+  handleDelete
 }) => {
   const [eventsList, setEventsList] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState(null);
 
-  const showDeleteConfirm = () => {
-    Modal.confirm({
-      title: "Are you sure delete this task?",
-      icon: <ExclamationCircleFilled />,
-      okText: "Yes",
-      cancelText: "No",
-      onOk() {
-        console.log("OK");
-      },
-      onCancel() {
-        console.log("Cancel");
-      },
-    });
-  };
+  
 
   useEffect(() => {
     getFunction().then((events) => {
@@ -65,29 +52,32 @@ const EventList = ({
     if (id === undefined) {
       payload.current.operation = "ADD";
       payload.current.data = {};
-      setEventsList([...eventsList, payload.current.data]);
+      initFormData();
     } else {
       payload.current.operation = "UPDATE";
-      payload.current.data={
+      payload.current.data = {
         eventId: id,
       }
     const eventObj = eventsList?.find((event) => event.eventId === payload.current.data.eventId);
     payload.current.data = eventObj;
-    console.log(payload.current.data);
+    // console.log(payload.current.data);
     initFormData();
-    console.log(eventObj);
+    // console.log(eventObj);
   };
 }
 
   return (
     <>
       <Button
-        className="addButton"
         style={{
           marginBottom: "20px",
           marginLeft: "80%",
           width: "15%",
-          marginTop: 0,
+          backgroundColor: "rgb(220, 53, 75)",
+          color: "white",
+          marginTop: "5%",
+          marginRight: "5%",
+          padding: 0,
         }}
         onClick={() => {
           initCreateUpdate();
@@ -107,7 +97,7 @@ const EventList = ({
                 index={event.eventId}
                 next={next}
                 setEvent={setEvent}
-                showDeleteConfirm={showDeleteConfirm}
+                handleDelete={handleDelete}
                 initCreateUpdate={initCreateUpdate}
                 showModal={showModal}
               />
@@ -127,9 +117,9 @@ const Event = ({
   event,
   next,
   setEvent,
-  showDeleteConfirm,
   initCreateUpdate,
   showModal,
+  handleDelete
 }) => {
   const handleClick = () => {
     setEvent(event);
@@ -143,7 +133,7 @@ const Event = ({
         onClick={handleClick}
         hoverable
         style={{ width: 240 }}
-        cover={<img alt={event.eventName} src={event.eventPoster} />}
+        cover={<img alt={event.eventName} src={event.eventPoster} style={{width:240, height:360}}/>}
       >
         <Card.Meta title={event.eventName} description={event.venue} />
       </Card>
@@ -156,7 +146,7 @@ const Event = ({
               showModal();
             }}
           />
-          <DeleteOutlined key="delete" onClick={showDeleteConfirm} />
+          <DeleteOutlined key="delete" onClick={()=>handleDelete(event.eventId)} />
         </Flex>
       </Card>
     </>

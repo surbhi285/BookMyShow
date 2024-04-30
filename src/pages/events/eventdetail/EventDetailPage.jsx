@@ -44,12 +44,11 @@ export default function EventDetailPage({event, back}) {
   });
 
   const initFormData = () => {
-    if (payload.current.data) {
-      form.setFieldsValue(payload.current.data);
-    } else {
-      form.resetFields();
-    }
+   payload.current.data.reviewId ?
+   form.setFieldsValue(payload.current.data)
+   : form.resetFields();
   };
+
   console.log("data",payload.current.data)
 
   console.log(review);

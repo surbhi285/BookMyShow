@@ -16,11 +16,8 @@ function App() {
     <>
 
       <BrowserRouter>
-
         <HeaderFooter />
-
            <AuthWrapper />
-
         <FooterFile />
       </BrowserRouter>
 

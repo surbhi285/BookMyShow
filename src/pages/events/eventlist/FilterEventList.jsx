@@ -14,7 +14,9 @@ export default function FilterEventList({ searchObj, setSearchObj }) {
       <Typography.Title style={{marginLeft:"5%"}}>Events in Delhi-NCR</Typography.Title>
       
       <Layout style={{backgroundColor:"white"}}>
-        <Layout.Header className="header">
+        <Layout.Header style={{ backgroundColor:"white",
+  marginLeft:"10%", 
+  marginBottom: "2%"}}>
           <Flex wrap="wrap" gap="small">
         {genres.map((genre, index) => (
           <Button

@@ -8,8 +8,6 @@ const { Text } = Typography;
 
 
 const ArtistDetailPage = ({back,artistId}) => {
-    // const params=useParams()
-    // let artistId=params.artistId
     const [artistDetails, setArtistDetails] = useState(null);
     
     useEffect(() => {
@@ -44,9 +42,7 @@ const ArtistDetailPage = ({back,artistId}) => {
         }}onClick={back}>back</Button>
               
                 <>
-                      <Card
-                // style={{ backgroundColor: "white" }},
-                
+                <Card
                 style={{
                     
                 backgroundColor:"black",

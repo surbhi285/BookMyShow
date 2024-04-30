@@ -10,6 +10,7 @@ export default function EventListPage({
   payload,
   initFormData,
   updatedCount,
+  handleDelete
 }) {
   const [searchObj, setSearchObj] = useState({});
 
@@ -28,6 +29,7 @@ export default function EventListPage({
           initFormData={initFormData}
           updatedCount={updatedCount}
           showModal = {showModal}
+          handleDelete={handleDelete}
         />
       </Col>
     </Row>

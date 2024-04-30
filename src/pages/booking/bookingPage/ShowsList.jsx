@@ -9,14 +9,15 @@ import { useParams } from "react-router-dom";
 
 const filterShows = (shows, showSearch) => {
   return shows.filter((show) => {
+    console.log("search", showSearch)
     if (
       !showSearch ||
-      ((!showSearch.language ||
-        showSearch.language.every((language) =>
+      ((!showSearch.language || (showSearch.language.length === 0) ||
+        showSearch.language.some((language) =>
           show.language.includes(language)
         )) &&
-        (!showSearch.location ||
-          showSearch.location.every((location) =>
+        (!showSearch.location || (showSearch.location.length === 0) ||
+          showSearch.location.some((location) =>
             show.venue.includes(location)
           )))
     ) 
@@ -25,16 +26,19 @@ const filterShows = (shows, showSearch) => {
   });
 };
 const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormData}) => {
+  // const { id } = useParams();
   const [filteredShow, setFilteredShow] = useState(null);
-
+ 
+  console.log("show checking",shows);
 
   useEffect(() => {
     if (showSearch && shows) {
       let filteredEvents = filterShows(shows, showSearch);
-      // console.log("filtered", filteredEvents);
+      console.log("filtered", filteredEvents);
       setFilteredShow(filteredEvents);
     }
   }, [shows, showSearch]);
+
 
   return (
     <>
@@ -47,8 +51,8 @@ const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormDat
             index={show.showId}
             showModal={showModal}
             payload={payload}
-            initFormData={initFormData}
-           
+            initFormData={initFormData} 
+                   
           />
         ))
       ) : (
@@ -60,6 +64,7 @@ const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormDat
 
 const Show = ({ show, events, showModal, payload, initFormData }) => {
   const { id } = useParams();
+  console.log("id",id)
   
   const findEvent = (categoryId) => {
     return events.find((event) => event.eventId === categoryId);
@@ -71,7 +76,7 @@ const Show = ({ show, events, showModal, payload, initFormData }) => {
     payload.current.data = {};
     initFormData();
   }
-  // console.log(payload.current.data)
+  console.log(payload.current.data, "payload")
 
 
   return (
@@ -126,7 +131,7 @@ const Show = ({ show, events, showModal, payload, initFormData }) => {
       <Flex>
         <Typography.Title level={4} style={{ width: "50%", marginLeft: "3%" }}>
           <HeartOutlined style={{ marginRight: "10px", color: "grey" }} />
-          {event.eventName}
+          {event?.eventName}
         </Typography.Title>
         <Button
           style={{ marginTop: "30px", color: "#4ABD5D", height: "40px", marginRight:"25%" }}
@@ -153,6 +158,7 @@ const Show = ({ show, events, showModal, payload, initFormData }) => {
             width: "10px",
             marginRight: "10px",
             color: "#FFC610",
+            marginBottom:"2%"
           }}
         />
         Non-Cancellable

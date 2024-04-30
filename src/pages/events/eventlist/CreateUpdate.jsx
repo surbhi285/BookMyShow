@@ -1,5 +1,20 @@
-import { Modal, Input, Form, Select, DatePicker, Button } from "antd";
+import {
+  Modal,
+  Input,
+  Form,
+  Select,
+  DatePicker,
+  Button,
+  Space,
+  message,
+  Upload,
+} from "antd";
 import { addFunction, updateFunction } from "../../../services/events/events";
+// import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+// import { Form, Input, Space } from 'antd';
+import { useState } from "react";
+import moment from "moment";
 
 export default function CreateUpdate({
   isModalOpen,
@@ -8,27 +23,38 @@ export default function CreateUpdate({
   payload,
   form,
   setUpdatedCount,
-  setEvent,
+  Flex
 }) {
+  const [fileList, setFileList] = useState([]);
+  const onChange = ({ fileList: newFileList }) => {
+    setFileList(newFileList);
+  };
+
   const submitForm = (values) => {
-    payload.current.data = { ...payload.current.data, ...values };
-    console.log(payload.current.data, "create")
+    const transformedValue = {
+      ...values,
+      eventId: +values.eventId,
+      artist: [values["artist"]],
+      language: [values["language"]],
+      genres: [values["language"]],
+      date: values["date"].map((date) => date.format("DD MMM YYYY")),
+    };
+    payload.current.data = { ...payload.current.data, ...transformedValue };
+    console.log(payload.current.data, "create");
     if (payload.current.operation === "ADD") {
       payload.current.data.eventId = Math.random();
-      addFunction(payload.current.data).then((data) => {
-        setEvent(data);
+      addFunction(payload.current.data).then(() => {
+        console.log(payload.current.data, "surbhi");
         setUpdatedCount((count) => count + 1);
-        handleCancel();
+        handleOk();
       });
     } else {
-      updateFunction(payload.current.data, "eventId").then((data) => {
-        console.log(data)
-        setEvent(data);
+      updateFunction(payload.current.data, "eventId").then(() => {
         setUpdatedCount((count) => count + 1);
-        handleCancel();
-       console.log(data);
+        handleOk();
       });
     }
+    payload.current.data = {};
   };
 
   return (
@@ -72,14 +98,13 @@ export default function CreateUpdate({
             name="eventPoster"
             label="Event Poster URL"
             rules={[
-              { type: "url", warningOnly: true },
-              { type: "string", min: 6 },
+              { required: true, message: "Please input your Event Poster!" },
             ]}
           >
             <Input />
           </Form.Item>
 
-          {/* <Form.Item label="Language" name="language">
+          <Form.Item label="Language" name="language">
             <Select>
               <Select.Option value="Hindi">Hindi</Select.Option>
               <Select.Option value="English">English</Select.Option>
@@ -130,8 +155,8 @@ export default function CreateUpdate({
             <Input />
           </Form.Item>
 
-          <Form.Item label="DatePicker">
-            <DatePicker />
+          <Form.Item name="date" label="Date">
+            <DatePicker multiple onChange={onChange} />
           </Form.Item>
 
           <Form.Item
@@ -150,15 +175,81 @@ export default function CreateUpdate({
             rules={[{ required: true, message: "Please input your Price!" }]}
           >
             <Input />
-          </Form.Item> */}
+          </Form.Item>
+          <Form.List name="artist">
+      {(fields, { add, remove }) => (
+        <>
+          {fields.map(({ key, name, ...restField }) => (
+            <Space
+              key={key}
+              style={{
+                display: 'block',
+                marginBottom: 8,
+
+              }}
+              align="baseline"
+            >
+              <Form.Item
+                {...restField}
+                name={[name, 'name']}
+                label="Artist Name"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Missing  name',
+                  },
+                ]}
+              >
+                <Input placeholder="Artist Name" />
+ 
+              </Form.Item>
+              
+             <Form.Item
+                {...restField}
+                name={[name, 'image']}
+                label="Artist Image"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Missing  Image',
+                  },
+                ]}
+              >
+                <Input placeholder="Artist Image"/>
+              </Form.Item>
+              <MinusCircleOutlined onClick={() => remove(name)} style={{marginLeft:"100%", marginTop:"0"}}/>
+            </Space>
+          ))}
+           <Form.Item style={{marginLeft:120}}>
+            <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />} >
+              Add Artist
+            </Button>
+          </Form.Item>
+        </>
+      )}
+    </Form.List>             
+          <Form.Item
+            name="eventImage"
+            label="Event Poster 2"
+            rules={[
+              { required: true, message: "Please input your Event Poster!" },
+            ]}
+          >
+            <Input />
+          </Form.Item>
           <Form.Item>
-            <Button type="primary" onClick={handleCancel}>
+            <Button
+              type="primary"
+              onClick={handleCancel}
+              style={{ marginRight: "10px" }}
+            >
               Cancel
             </Button>
             <Button type="primary" htmlType="submit">
-            {payload.current.operation === "ADD" ? "Add Event" : "Update Event"}
-          </Button>
-
+              {payload.current.operation === "ADD"
+                ? "Add Event"
+                : "Update Event"}
+            </Button>
           </Form.Item>
         </Form>
       </Modal>

@@ -31,20 +31,20 @@ export default function CreateUpdate({
   };
 
   const submitForm = (values) => {
+    console.log("submit")
     const transformedValue = {
       ...values,
-      eventId: +values.eventId,
-      artist: [values["artist"]],
       language: [values["language"]],
-      genres: [values["language"]],
-      date: values["date"].map((date) => date.format("DD MMM YYYY")),
+      genres: [values["genres"]],
+      date: values["date"]?.map((date) => date.format("DD MMM YYYY")),
     };
+    
     payload.current.data = { ...payload.current.data, ...transformedValue };
-    console.log(payload.current.data, "create");
+    console.log(payload, "create");
     if (payload.current.operation === "ADD") {
       payload.current.data.eventId = Math.random();
       addFunction(payload.current.data).then(() => {
-        console.log(payload.current.data, "surbhi");
+        console.log(payload, "surbhi");
         setUpdatedCount((count) => count + 1);
         handleOk();
       });
@@ -56,7 +56,6 @@ export default function CreateUpdate({
     }
     payload.current.data = {};
   };
-
   return (
     <>
       <Modal
@@ -76,13 +75,13 @@ export default function CreateUpdate({
           form={form}
           autoComplete="off"
         >
-          <Form.Item
+          {/* <Form.Item
             label="Event Id"
             name="eventId"
             rules={[{ required: true, message: "Please input your event Id!" }]}
           >
             <Input />
-          </Form.Item>
+          </Form.Item> */}
 
           <Form.Item
             label="Event Name"
@@ -103,7 +102,6 @@ export default function CreateUpdate({
           >
             <Input />
           </Form.Item>
-
           <Form.Item label="Language" name="language">
             <Select>
               <Select.Option value="Hindi">Hindi</Select.Option>
@@ -200,7 +198,7 @@ export default function CreateUpdate({
                   },
                 ]}
               >
-                <Input placeholder="Artist Name" />
+              <Input placeholder="Artist Name" />
  
               </Form.Item>
               

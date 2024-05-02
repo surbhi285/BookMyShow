@@ -26,8 +26,9 @@ let crudOperation = {
 
     update: function(list, obj, pk){
     let newArr =  list.map((item)=>{
+        console.log("obj", obj)
         console.log(item.eventId,obj.eventId,"surbhi")
-        if(item[pk]==obj[pk]){
+        if(item[pk]===obj[pk]){
           console.log(item, "rashu")
             return obj; 
         }else{

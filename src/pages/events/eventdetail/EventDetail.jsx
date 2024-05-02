@@ -96,9 +96,9 @@ export default function EventDetail({
                     width: "100%",
                   }}
                 >
-                  {eventDetail.genres.join(", ")} |{" "}
-                  {eventDetail.language.join(", ")} |{" "}
-                  {eventDetail.censorBoardRating} | {eventDetail.duration}
+                  {eventDetail?.genres?.join(", ")} |{" "}
+                  {eventDetail?.language?.join(", ")} |{" "}
+                  {eventDetail?.censorBoardRating} | {eventDetail?.duration}
                 </Typography>
                 <Link to={`booking/event/${eventDetail.eventId}`}>
                   <Button
@@ -134,23 +134,22 @@ export default function EventDetail({
       </Card>
       <Divider />
       <Card>
-        <Typography.Title style={{ paddingLeft: "10%" }}>Cast</Typography.Title>
-        <Row gutter={16} style={{marginLeft:"12%"}}>
+                <Typography.Title style={{marginLeft:"10%"}}>Cast</Typography.Title>
+                <Row gutter={16}>
                 {artistList?.map(artist=>(
-                    <Col span ={4} style={{marginRight:"5%"}}>
-                    <div  key={artist.artistId}  onClick={()=> onSelectArtist(artist?.artistId)}>
-                    {<img style={{ width: 150, height: 150,borderRadius:'50%' }}
+                    <Col span ={5}>
+                    <div  key={artist.artistId}  onClick={()=>{
+                        onSelectArtist(artist.artistId)
+                    }}>
+                    {<img style={{ width: 150, height: 150,borderRadius:'50%', marginLeft:200 }}
                     src={artist.image}
-                    alt={artist.name} 
-                    />}
-                    <Typography.Title level={4} style={{marginLeft:"10%"}}>{artist.name}</Typography.Title>
+                    alt={artist.name} />}
+                    <Typography.Title level={4} style={{marginLeft:200 ,width: 200 }}>{artist.name}</Typography.Title>
                     </div>
                     </Col>
                 ))}
                 </Row>
-      </Card>
-
-      <Divider />
+                </Card>
       <Typography.Title style={{ marginLeft: "10%" }}>
         Top reviews
       </Typography.Title>

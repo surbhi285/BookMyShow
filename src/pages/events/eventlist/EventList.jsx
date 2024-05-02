@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { getFunction } from "../../../services/events/events";
 import { Card, Row, Col, Typography, Button, Flex } from "antd";
+
 import {
   EditOutlined,
   DeleteOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
-
 const filterEvents = (events, searchObj) => {
   return events.filter((event) => {
     if (
@@ -32,14 +32,12 @@ const EventList = ({
 }) => {
   const [eventsList, setEventsList] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState(null);
-
-  
-
   useEffect(() => {
     getFunction().then((events) => {
       setEventsList(events);
     });
   }, [updatedCount]);
+  console.log(eventsList);
 
   useEffect(() => {
     if (searchObj && eventsList) {
@@ -50,26 +48,31 @@ const EventList = ({
 
   const initCreateUpdate = (id) => {
     if (id === undefined) {
-      payload.current.operation = "ADD";
+      payload.current.operation = "ADD";   
       payload.current.data = {};
+      console.log(payload, "karsh")
       initFormData();
+
     } else {
       payload.current.operation = "UPDATE";
       payload.current.data = {
         eventId: id,
-      }
-    const eventObj = eventsList?.find((event) => event.eventId === payload.current.data.eventId);
+      };
+    const eventObj = eventsList?.find(
+      (event) => event.eventId === payload.current.data.eventId
+    );
     payload.current.data = eventObj;
-    // console.log(payload.current.data);
+    console.log("eventObj", eventObj)
     initFormData();
-    // console.log(eventObj);
-  };
+    }
 }
 
   return (
     <>
       <Button
         style={{
+          backgroundColor: "rgb(220, 53, 75)",
+          color: "white",
           marginBottom: "20px",
           marginLeft: "80%",
           width: "15%",
@@ -119,7 +122,7 @@ const Event = ({
   setEvent,
   initCreateUpdate,
   showModal,
-  handleDelete
+  handleDelete,
 }) => {
   const handleClick = () => {
     setEvent(event);
@@ -146,7 +149,10 @@ const Event = ({
               showModal();
             }}
           />
-          <DeleteOutlined key="delete" onClick={()=>handleDelete(event.eventId)} />
+          <DeleteOutlined
+            key="delete"
+            onClick={() => handleDelete(event.eventId)}
+          />
         </Flex>
       </Card>
     </>

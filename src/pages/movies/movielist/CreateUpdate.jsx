@@ -17,15 +17,14 @@ export default function CreateUpdate({
     if (payload.current.operation === "ADD") {
       payload.current.data.movieId = Math.random();
       addFunction(payload.current.data).then((data) => {
-        onSelectMovie(data);
+        // onSelectMovie(data.movieId);
         setUpdatedCount((count) => count + 1);
         handleCancel();
       });
     } else {
-    
       updateFunction(payload.current.data, "movieId").then((data) => {
         console.log(data)
-        onSelectMovie(data.movieId);
+        // onSelectMovie(data.movieId);
         setUpdatedCount((count) => count + 1);
         handleCancel();
        console.log(data);
@@ -52,7 +51,20 @@ export default function CreateUpdate({
           form={form}
           autoComplete="off"
         >
-          
+           {/* <Form.Item
+                label="Movie_Id"
+                name="movieId"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Please provide Movie Id!',
+                    },
+                ]}
+            >
+                <Input style={{
+                    width: '100%',
+                }} placeholder="'Please provide Movie Id', " />
+            </Form.Item > */}
           <Form.Item
                 label="Movie Name"
                 name="movieName"
@@ -67,7 +79,6 @@ export default function CreateUpdate({
                     width: '100%',
                 }} placeholder="'Please provide Movie Name', " />
             </Form.Item >
-
             <Form.Item
                 label="Movie Poster"
                 name="moviePoster"
@@ -82,7 +93,7 @@ export default function CreateUpdate({
                     width: '100%',
                 }} placeholder="'Please provide Movie Poster', " />
             </Form.Item >
-            <Form.Item
+            {/* <Form.Item
                 label="Movie Languages"
                 name="movieLanguages"
                 rules={[
@@ -165,9 +176,13 @@ export default function CreateUpdate({
                 <Input style={{
                     width: '100%',
                 }} placeholder="'Please provide Censor Board Rating', " />
-            </Form.Item >
+<<<<<<< HEAD
+            </Form.Item >     
+=======
+            </Form.Item > */}
           
           
+>>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
           <Form.Item>
             <Button type="primary" onClick={handleCancel}>
               Cancel

@@ -15,7 +15,7 @@ export default function FilterEventList({ searchObj, setSearchObj }) {
       
       <Layout style={{backgroundColor:"white"}}>
         <Layout.Header style={{ backgroundColor:"white",
-  marginLeft:"10%", 
+  marginLeft:"10%",
   marginBottom: "2%"}}>
           <Flex wrap="wrap" gap="small">
         {genres.map((genre, index) => (

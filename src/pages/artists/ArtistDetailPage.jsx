@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Typography } from 'antd';
 
 import { getArtist } from "../../services/artist/artist";
-import { useParams } from "react-router-dom";
 const { Text } = Typography;
 
 
@@ -18,9 +17,6 @@ const ArtistDetailPage = ({back,artistId}) => {
             })
     }, [])
     
-    
-    
-
     let selectedArtist=null
     if (artistDetails) {
         selectedArtist = artistDetails.find(artist => artist.artistId == artistId);

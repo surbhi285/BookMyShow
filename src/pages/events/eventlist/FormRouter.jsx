@@ -6,6 +6,7 @@ import EventListPage from "./EventListPage";
 import { removeFunction } from "../../../services/events/events";
 import moment from "moment";
 
+
 export default function FormRouter({ setEvent, next }) {
   const [updatedCount, setUpdatedCount] = useState(0);
   const [isModelOpen, setIsModalOpen] = useState(false);
@@ -56,6 +57,7 @@ export default function FormRouter({ setEvent, next }) {
         ...payload.current.data, 
         date: payload.current.data.date.map(date => moment(date, "DD MMM YYYY")),
       }
+      console.log("artist", payload)
       form.setFieldsValue(payload.current.data)
     }else{
       form.resetFields();

@@ -9,7 +9,7 @@ console.log(moviesDetail)
 export function getFunctions(){
     return new Promise((resolve)=>{
          moviesDetail=CrudOperation.get(moviesDetail);
-        resolve(moviesDetail[1])
+        resolve(moviesDetail)
     })
 }
 export function getFunction(){

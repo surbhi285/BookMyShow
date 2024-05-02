@@ -15,7 +15,7 @@ export default function FilterShowsList({ showSearch, setShowSearch }) {
           value={showSearch.language}
           onChange={(language) => setShowSearch({ ...showSearch, language})}
           allowClear
-          style={{ width: "20%", marginTop: "10px", marginLeft: "55%", marginBottom: "15px" }}
+          style={{ width: "30%", marginTop: "10px", marginLeft: "45%", marginBottom: "15px" }}
         >
           {languages.map((language, index) => (
             <Select.Option key={index} value={language}>
@@ -29,7 +29,7 @@ export default function FilterShowsList({ showSearch, setShowSearch }) {
           placeholder="Location"
           onChange={(value) => setShowSearch({ ...showSearch, location: value })}
           allowClear
-          style={{ width: "20%", marginTop: "10px", marginBottom: "15px", marginRight: "20px" }}
+          style={{ width: "30%", marginTop: "10px", marginBottom: "15px", marginRight: "20px" }}
         >
           {locations.map((location, index) => (
             <Select.Option key={index} value={location}>
